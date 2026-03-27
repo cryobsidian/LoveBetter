@@ -1,0 +1,201 @@
+﻿Name,Difficulty Level,Question Type
+Do you know their favorite comfort food?,Level 1,Preference and Taste
+Do you know their favorite snack?,Level 1,Preference and Taste
+Do you know their favorite dessert?,Level 1,Preference and Taste
+Do you know what drink they order most often?,Level 1,Preference and Taste
+Do you know what cuisine they enjoy the most?,Level 1,Preference and Taste
+Do you know their least favorite food?,Level 1,Preference and Taste
+Do you know their favorite fruit?,Level 1,Preference and Taste
+Do you know how spicy they like their food?,Level 1,Preference and Taste
+Do you know what they usually crave at night?,Level 1,Preference and Taste
+Do you know whether they prefer sweet or savory?,Level 1,Preference and Taste
+Do you know their favorite ice cream flavor?,Level 1,Preference and Taste
+Do you know what they usually order at a bubble tea shop?,Level 1,Preference and Taste
+Do you know their favorite type of bread or pastry?,Level 1,Preference and Taste
+Do you know their favorite fast food item?,Level 1,Preference and Taste
+Do you know if they prefer hot or cold drinks?,Level 1,Preference and Taste
+Do you know what they usually eat when they’re sick?,Level 1,Preference and Taste
+Do you know their favorite type of chocolate?,Level 1,Preference and Taste
+Do you know what they avoid eating if possible?,Level 1,Preference and Taste
+Do you know their favorite breakfast choice?,Level 1,Preference and Taste
+Do you know what food they would never get tired of?,Level 1,Preference and Taste
+Do you know what time they usually wake up?,Level 1,Daily Habits
+Do you know what time they usually sleep?,Level 1,Daily Habits
+Do you know how long they take to get ready?,Level 1,Daily Habits
+Do you know their morning routine style?,Level 1,Daily Habits
+Do you know if they skip breakfast often?,Level 1,Daily Habits
+Do you know how much water they drink daily?,Level 1,Daily Habits
+Do you know their most productive time of day?,Level 1,Daily Habits
+Do you know how often they exercise?,Level 1,Daily Habits
+Do you know how they usually spend their lunch break?,Level 1,Daily Habits
+Do you know what they do right before bed?,Level 1,Daily Habits
+Do you know if they check their phone first thing in the morning?,Level 1,Daily Habits
+Do you know how often they nap?,Level 1,Daily Habits
+Do you know if they prefer structured or flexible days?,Level 1,Daily Habits
+Do you know if they multitask often?,Level 1,Daily Habits
+Do you know how they unwind after a long day?,Level 1,Daily Habits
+Do you know how they start their work or study sessions?,Level 1,Daily Habits
+Do you know how they handle deadlines?,Level 1,Daily Habits
+Do you know if they prefer working alone or with others?,Level 1,Daily Habits
+Do you know their typical bedtime habits?,Level 1,Daily Habits
+Do you know how often they take breaks during work?,Level 1,Daily Habits
+Do you know if they consider themselves introverted or extroverted?,Level 1,Personality and Tendencies
+Do you know how they react when they’re stressed?,Level 1,Personality and Tendencies
+Do you know how they behave when they’re tired?,Level 1,Personality and Tendencies
+Do you know if they prefer planning or being spontaneous?,Level 1,Personality and Tendencies
+Do you know how they behave when they’re excited?,Level 1,Personality and Tendencies
+Do you know whether they overthink small things?,Level 1,Personality and Tendencies
+Do you know if they make decisions quickly or slowly?,Level 1,Personality and Tendencies
+Do you know what annoys them easily?,Level 1,Personality and Tendencies
+Do you know what usually cheers them up?,Level 1,Personality and Tendencies
+Do you know if they get competitive easily?,Level 1,Personality and Tendencies
+Do you know how they handle losing?,Level 1,Personality and Tendencies
+Do you know how they usually apologize?,Level 1,Personality and Tendencies
+Do you know how they react to criticism?,Level 1,Personality and Tendencies
+Do you know if they like being the center of attention?,Level 1,Personality and Tendencies
+Do you know how they behave when they’re bored?,Level 1,Personality and Tendencies
+Do you know if they prefer logic or feelings when deciding?,Level 1,Personality and Tendencies
+Do you know if they tend to worry about the future?,Level 1,Personality and Tendencies
+Do you know how they express excitement?,Level 1,Personality and Tendencies
+Do you know if they are patient or impatient?,Level 1,Personality and Tendencies
+Do you know how they react to unexpected changes?,Level 1,Personality and Tendencies
+Do you know how they feel about big social gatherings?,Level 1,Social & Leisure
+Do you know how they feel about meeting new people?,Level 1,Social & Leisure
+Do you know their ideal weekend activity?,Level 1,Social & Leisure
+Do you know their favorite type of movie?,Level 1,Social & Leisure
+Do you know their favorite way to relax?,Level 1,Social & Leisure
+Do you know their favorite music genre?,Level 1,Social & Leisure
+Do you know their favorite TV show?,Level 1,Social & Leisure
+Do you know whether they prefer staying in or going out?,Level 1,Social & Leisure
+Do you know how long their social battery usually lasts?,Level 1,Social & Leisure
+Do you know if they prefer daytime or nighttime outings?,Level 1,Social & Leisure
+Do you know what kind of games they enjoy?,Level 1,Social & Leisure
+Do you know their favorite hobby?,Level 1,Social & Leisure
+Do you know how often they go out with friends?,Level 1,Social & Leisure
+Do you know how they usually spend free time alone?,Level 1,Social & Leisure
+Do you know if they enjoy group activities?,Level 1,Social & Leisure
+Do you know if they like trying new hobbies?,Level 1,Social & Leisure
+Do you know if they prefer quiet or lively environments?,Level 1,Social & Leisure
+Do you know how they feel about crowded places?,Level 1,Social & Leisure
+Do you know if they enjoy events like concerts or festivals?,Level 1,Social & Leisure
+Do you know how they react to last-minute plans?,Level 1,Social & Leisure
+Do you know how they choose restaurants?,Level 1,Food & Dining Style
+Do you know what they always order at a cafe?,Level 1,Food & Dining Style
+Do you know if they prefer sharing food?,Level 1,Food & Dining Style
+Do you know if they like trying new food?,Level 1,Food & Dining Style
+Do you know their favorite fast food chain?,Level 1,Food & Dining Style
+Do you know how they feel about buffets?,Level 1,Food & Dining Style
+Do you know their favorite local dish?,Level 1,Food & Dining Style
+Do you know how they celebrate with food?,Level 1,Food & Dining Style
+Do you know if they eat when stressed?,Level 1,Food & Dining Style
+Do you know if they finish their food or leave leftovers?,Level 1,Food & Dining Style
+Do you know if they are picky with food?,Level 1,Food & Dining Style
+Do you know if they prefer dine-in or takeaway?,Level 1,Food & Dining Style
+Do you know how adventurous they are with food?,Level 1,Food & Dining Style
+Do you know if they prefer familiar or new places?,Level 1,Food & Dining Style
+Do you know if they like street food?,Level 1,Food & Dining Style
+Do you know how often they eat out?,Level 1,Food & Dining Style
+Do you know their favorite late-night food option?,Level 1,Food & Dining Style
+Do you know if they prefer eating alone or with others?,Level 1,Food & Dining Style
+Do you know how they decide what to eat daily?,Level 1,Food & Dining Style
+Do you know their preferred room temperature?,Level 1,Lifestyle & Comfort
+Do you know if they enjoy cooking or prefer buying food?,Level 1,Food & Dining Style
+Do you know what kind of pillow they prefer?,Level 1,Lifestyle & Comfort
+Do you know if they like sleeping with lights on or off?,Level 1,Lifestyle & Comfort
+Do you know how tidy they like their space?,Level 1,Lifestyle & Comfort
+Do you know if they prefer silence or background noise?,Level 1,Lifestyle & Comfort
+Do you know what scent they like most?,Level 1,Lifestyle & Comfort
+Do you know if they prefer texting or calling?,Level 1,Lifestyle & Comfort
+Do you know what clothing style they feel most comfortable in?,Level 1,Lifestyle & Comfort
+Do you know what makes them feel cozy?,Level 1,Lifestyle & Comfort
+Do you know if they check their phone first thing in the morning?,Level 1,Lifestyle & Comfort
+Do you know if they prefer cold or warm showers?,Level 1,Lifestyle & Comfort
+Do you know how they like their room lighting?,Level 1,Lifestyle & Comfort
+Do you know what they wear at home most of the time?,Level 1,Lifestyle & Comfort
+Do you know if they prefer quiet mornings or active ones?,Level 1,Lifestyle & Comfort
+Do you know if they prefer soft or firm beds?,Level 1,Lifestyle & Comfort
+Do you know if they like background music at home?,Level 1,Lifestyle & Comfort
+Do you know what kind of environment helps them relax?,Level 1,Lifestyle & Comfort
+Do you know what kind of weather makes them comfortable?,Level 1,Lifestyle & Comfort
+Do you know how they behave when they feel comfortable?,Level 1,Lifestyle & Comfort
+Do you know how they set up their personal space?,Level 1,Lifestyle & Comfort
+Do you know their ideal type of vacation?,Level 1,Travel & Exploration
+Do you know how they handle travel delays?,Level 1,Travel & Exploration
+Do you know if they prefer window or aisle seats?,Level 1,Travel & Exploration
+Do you know if they pack early or last minute?,Level 1,Travel & Exploration
+Do you know if they prefer mountains or beaches?,Level 1,Travel & Exploration
+Do you know how they choose travel destinations?,Level 1,Travel & Exploration
+Do you know if they enjoy road trips?,Level 1,Travel & Exploration
+Do you know their dream country to visit?,Level 1,Travel & Exploration
+Do you know if they prefer luxury or budget travel?,Level 1,Travel & Exploration
+Do you know how they plan itineraries?,Level 1,Travel & Exploration
+Do you know how they behave on trips?,Level 1,Travel & Exploration
+Do you know if they like taking photos while traveling?,Level 1,Travel & Exploration
+Do you know if they prefer packed schedules or relaxed trips?,Level 1,Travel & Exploration
+Do you know if they like revisiting places?,Level 1,Travel & Exploration
+Do you know if they prefer guided tours or exploring alone?,Level 1,Travel & Exploration
+Do you know how they explore new places?,Level 1,Travel & Exploration
+Do you know how they handle getting lost?,Level 1,Travel & Exploration
+Do you know if they prefer local food or familiar food when traveling?,Level 1,Travel & Exploration
+Do you know what they enjoy most about traveling?,Level 1,Travel & Exploration
+Do you know what makes a trip memorable for them?,Level 1,Travel & Exploration
+Do you know what they usually spend money on?,Level 1,Money & Shopping Habits
+Do you know if they prefer saving or spending?,Level 1,Money & Shopping Habits
+Do you know how they decide to buy something?,Level 1,Money & Shopping Habits
+Do you know if they prefer practical or sentimental items?,Level 1,Money & Shopping Habits
+Do you know what kind of gifts they like receiving?,Level 1,Money & Shopping Habits
+Do you know their favorite brand?,Level 1,Money & Shopping Habits
+Do you know if they compare prices before buying?,Level 1,Money & Shopping Habits
+Do you know what they consider a “worth it” purchase?,Level 1,Money & Shopping Habits
+Do you know if they like surprise gifts?,Level 1,Money & Shopping Habits
+Do you know what small purchase makes them happiest?,Level 1,Money & Shopping Habits
+Do you know how they feel after spending money?,Level 1,Money & Shopping Habits
+Do you know if they impulse buy often?,Level 1,Money & Shopping Habits
+Do you know how they prioritize purchases?,Level 1,Money & Shopping Habits
+Do you know if they track their spending?,Level 1,Money & Shopping Habits
+Do you know how often they shop online?,Level 1,Money & Shopping Habits
+Do you know what they hesitate to spend on?,Level 1,Money & Shopping Habits
+Do you know if they prefer quality or quantity?,Level 1,Money & Shopping Habits
+Do you know if they enjoy shopping or find it tiring?,Level 1,Money & Shopping Habits
+Do you know what makes them regret a purchase?,Level 1,Money & Shopping Habits
+Do you know how they decide between options?,Level 1,Money & Shopping Habits
+Do you know how they prefer to celebrate birthdays?,Level 1,Relationship Awareness
+Do you know what kind of compliments they like?,Level 1,Relationship Awareness
+Do you know how they react to surprises?,Level 1,Relationship Awareness
+Do you know what makes them feel appreciated?,Level 1,Relationship Awareness
+Do you know how they prefer to communicate when busy?,Level 1,Relationship Awareness
+Do you know how they prefer to spend quality time?,Level 1,Relationship Awareness
+Do you know how they recharge after a long day?,Level 1,Relationship Awareness
+Do you know what makes them feel supported?,Level 1,Relationship Awareness
+Do you know what kind of small gestures they notice?,Level 1,Relationship Awareness
+Do you know what makes them smile instantly?,Level 1,Relationship Awareness
+Do you know how they like to receive help?,Level 1,Relationship Awareness
+Do you know how they show appreciation?,Level 1,Relationship Awareness
+Do you know what kind of messages they like receiving?,Level 1,Relationship Awareness
+Do you know how they behave when they miss someone?,Level 1,Relationship Awareness
+Do you know what makes them feel comfortable around you?,Level 1,Relationship Awareness
+Do you know how they react when plans change?,Level 1,Relationship Awareness
+Do you know what kind of attention they enjoy?,Level 1,Relationship Awareness
+Do you know how they respond to effort from others?,Level 1,Relationship Awareness
+Do you know how they like to spend time together casually?,Level 1,Relationship Awareness
+Do you know their favorite emoji?,Level 1,Fun & Random
+Do you know what kind of moments they value most?,Level 1,Relationship Awareness
+Do you know what kind of memes they like?,Level 1,Fun & Random
+Do you know their most used phrase?,Level 1,Fun & Random
+Do you know their favorite time to scroll social media?,Level 1,Fun & Random
+Do you know what they usually do when bored?,Level 1,Fun & Random
+Do you know their favorite app?,Level 1,Fun & Random
+Do you know what song they would sing in the shower?,Level 1,Fun & Random
+Do you know their favorite color to wear?,Level 1,Fun & Random
+Do you know their comfort activity when feeling down?,Level 1,Fun & Random
+Do you know their favorite way to waste time?,Level 1,Fun & Random
+Do you know one small habit they have that most people don’t notice?,Level 1,Fun & Random
+Do you know what trend they would follow?,Level 1,Fun & Random
+Do you know what kind of jokes they like?,Level 1,Fun & Random
+Do you know how they act when they’re playful?,Level 1,Fun & Random
+Do you know what they do when they can’t sleep?,Level 1,Fun & Random
+Do you know what makes them laugh instantly?,Level 1,Fun & Random
+Do you know how they react to funny videos?,Level 1,Fun & Random
+Do you know what random thing they enjoy a lot?,Level 1,Fun & Random
+Do you know something quirky about them?,Level 1,Fun & Random
+Do you know their guilty pleasure activity?,Level 1,Fun & Random
