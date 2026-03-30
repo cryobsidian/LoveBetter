@@ -27,10 +27,10 @@ import type { AnswerValue, Question, SessionSnapshot } from "./src/types";
 
 type Screen = "home" | "intro" | "question" | "summary";
 
-const answerOptions: { value: AnswerValue; label: string; hint: string }[] = [
-  { value: "yes", label: "Yes", hint: "I feel confident about this." },
-  { value: "mid", label: "Not really", hint: "I know part of it, but not clearly." },
-  { value: "no", label: "No", hint: "I do not really know this yet." },
+const answerOptions: { value: AnswerValue; label: string }[] = [
+  { value: "yes", label: "Yes" },
+  { value: "mid", label: "Not really" },
+  { value: "no", label: "No" },
 ];
 
 const theme = {
@@ -286,9 +286,6 @@ function QuestionScreen(props: {
 
       <View style={styles.questionCard}>
         <Text style={styles.questionText}>{props.currentQuestion.text}</Text>
-        <Text style={styles.questionSubtext}>
-          Answer from your current sense of things. The point is honesty, not being impressive.
-        </Text>
 
         <View style={styles.answerStack}>
           {answerOptions.map((option) => {
@@ -300,14 +297,9 @@ function QuestionScreen(props: {
                 style={[styles.answerButton, isSelected ? styles.answerButtonSelected : null]}
                 onPress={() => props.onAnswer(option.value)}
               >
-                <View style={styles.answerTopRow}>
-                  <Text style={[styles.answerLabel, isSelected ? styles.answerLabelSelected : null]}>
-                    {option.label}
-                  </Text>
-                  <Text style={[styles.answerHint, isSelected ? styles.answerHintSelected : null]}>
-                    {option.hint}
-                  </Text>
-                </View>
+                <Text style={[styles.answerLabel, isSelected ? styles.answerLabelSelected : null]}>
+                  {option.label}
+                </Text>
               </Pressable>
             );
           })}
@@ -696,11 +688,6 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: -0.5,
   },
-  questionSubtext: {
-    color: theme.mutedInk,
-    fontSize: 15,
-    lineHeight: 24,
-  },
   answerStack: {
     gap: 12,
   },
@@ -716,9 +703,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#342724",
     borderColor: "#342724",
   },
-  answerTopRow: {
-    gap: 6,
-  },
   answerLabel: {
     color: theme.ink,
     fontSize: 18,
@@ -726,14 +710,6 @@ const styles = StyleSheet.create({
   },
   answerLabelSelected: {
     color: "#fff7f1",
-  },
-  answerHint: {
-    color: theme.mutedInk,
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  answerHintSelected: {
-    color: "#f7ddd2",
   },
   feedbackCard: {
     backgroundColor: theme.cream,
