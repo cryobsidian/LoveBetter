@@ -5,7 +5,7 @@ Use this file to give repository-specific instructions to the coding agent.
 ## Project Context
 
 - This repo is for my web app that i am working on called Love better.
-- Note the main goals or constraints.
+- 
 
 ## Working Rules
 

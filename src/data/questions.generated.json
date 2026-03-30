@@ -1,0 +1,1002 @@
+[
+    {
+        "Name":  "Do you know their favorite comfort food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite snack?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite dessert?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what drink they order most often?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what cuisine they enjoy the most?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their least favorite food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite fruit?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know how spicy they like their food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what they usually crave at night?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know whether they prefer sweet or savory?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite ice cream flavor?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what they usually order at a bubble tea shop?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite type of bread or pastry?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite fast food item?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know if they prefer hot or cold drinks?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what they usually eat when they’re sick?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite type of chocolate?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what they avoid eating if possible?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know their favorite breakfast choice?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what food they would never get tired of?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Preference and Taste"
+    },
+    {
+        "Name":  "Do you know what time they usually wake up?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know what time they usually sleep?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how long they take to get ready?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know their morning routine style?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they skip breakfast often?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how much water they drink daily?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know their most productive time of day?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how often they exercise?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how they usually spend their lunch break?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know what they do right before bed?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they check their phone first thing in the morning?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how often they nap?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they prefer structured or flexible days?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they multitask often?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how they unwind after a long day?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how they start their work or study sessions?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how they handle deadlines?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they prefer working alone or with others?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know their typical bedtime habits?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know how often they take breaks during work?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Daily Habits"
+    },
+    {
+        "Name":  "Do you know if they consider themselves introverted or extroverted?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they react when they’re stressed?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they behave when they’re tired?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they prefer planning or being spontaneous?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they behave when they’re excited?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know whether they overthink small things?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they make decisions quickly or slowly?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know what annoys them easily?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know what usually cheers them up?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they get competitive easily?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they handle losing?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they usually apologize?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they react to criticism?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they like being the center of attention?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they behave when they’re bored?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they prefer logic or feelings when deciding?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they tend to worry about the future?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they express excitement?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know if they are patient or impatient?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they react to unexpected changes?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Personality and Tendencies"
+    },
+    {
+        "Name":  "Do you know how they feel about big social gatherings?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how they feel about meeting new people?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their ideal weekend activity?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their favorite type of movie?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their favorite way to relax?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their favorite music genre?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their favorite TV show?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know whether they prefer staying in or going out?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how long their social battery usually lasts?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know if they prefer daytime or nighttime outings?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know what kind of games they enjoy?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know their favorite hobby?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how often they go out with friends?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how they usually spend free time alone?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know if they enjoy group activities?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know if they like trying new hobbies?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know if they prefer quiet or lively environments?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how they feel about crowded places?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know if they enjoy events like concerts or festivals?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how they react to last-minute plans?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Social \u0026 Leisure"
+    },
+    {
+        "Name":  "Do you know how they choose restaurants?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know what they always order at a cafe?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they prefer sharing food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they like trying new food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know their favorite fast food chain?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know how they feel about buffets?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know their favorite local dish?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know how they celebrate with food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they eat when stressed?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they finish their food or leave leftovers?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they are picky with food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they prefer dine-in or takeaway?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know how adventurous they are with food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they prefer familiar or new places?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they like street food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know how often they eat out?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know their favorite late-night food option?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know if they prefer eating alone or with others?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know how they decide what to eat daily?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know their preferred room temperature?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they enjoy cooking or prefer buying food?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Food \u0026 Dining Style"
+    },
+    {
+        "Name":  "Do you know what kind of pillow they prefer?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they like sleeping with lights on or off?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know how tidy they like their space?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they prefer silence or background noise?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what scent they like most?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they prefer texting or calling?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what clothing style they feel most comfortable in?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what makes them feel cozy?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they check their phone first thing in the morning?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they prefer cold or warm showers?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know how they like their room lighting?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what they wear at home most of the time?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they prefer quiet mornings or active ones?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they prefer soft or firm beds?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know if they like background music at home?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what kind of environment helps them relax?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know what kind of weather makes them comfortable?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know how they behave when they feel comfortable?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know how they set up their personal space?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Lifestyle \u0026 Comfort"
+    },
+    {
+        "Name":  "Do you know their ideal type of vacation?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they handle travel delays?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer window or aisle seats?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they pack early or last minute?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer mountains or beaches?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they choose travel destinations?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they enjoy road trips?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know their dream country to visit?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer luxury or budget travel?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they plan itineraries?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they behave on trips?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they like taking photos while traveling?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer packed schedules or relaxed trips?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they like revisiting places?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer guided tours or exploring alone?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they explore new places?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know how they handle getting lost?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know if they prefer local food or familiar food when traveling?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know what they enjoy most about traveling?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know what makes a trip memorable for them?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Travel \u0026 Exploration"
+    },
+    {
+        "Name":  "Do you know what they usually spend money on?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they prefer saving or spending?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how they decide to buy something?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they prefer practical or sentimental items?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know what kind of gifts they like receiving?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know their favorite brand?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they compare prices before buying?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know what they consider a “worth it” purchase?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they like surprise gifts?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know what small purchase makes them happiest?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how they feel after spending money?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they impulse buy often?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how they prioritize purchases?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they track their spending?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how often they shop online?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know what they hesitate to spend on?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they prefer quality or quantity?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know if they enjoy shopping or find it tiring?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know what makes them regret a purchase?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how they decide between options?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Money \u0026 Shopping Habits"
+    },
+    {
+        "Name":  "Do you know how they prefer to celebrate birthdays?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what kind of compliments they like?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they react to surprises?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what makes them feel appreciated?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they prefer to communicate when busy?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they prefer to spend quality time?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they recharge after a long day?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what makes them feel supported?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what kind of small gestures they notice?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what makes them smile instantly?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they like to receive help?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they show appreciation?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what kind of messages they like receiving?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they behave when they miss someone?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what makes them feel comfortable around you?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they react when plans change?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what kind of attention they enjoy?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they respond to effort from others?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know how they like to spend time together casually?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know their favorite emoji?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what kind of moments they value most?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Relationship Awareness"
+    },
+    {
+        "Name":  "Do you know what kind of memes they like?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their most used phrase?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their favorite time to scroll social media?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what they usually do when bored?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their favorite app?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what song they would sing in the shower?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their favorite color to wear?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their comfort activity when feeling down?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their favorite way to waste time?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know one small habit they have that most people don’t notice?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what trend they would follow?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what kind of jokes they like?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know how they act when they’re playful?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what they do when they can’t sleep?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what makes them laugh instantly?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know how they react to funny videos?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know what random thing they enjoy a lot?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know something quirky about them?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    },
+    {
+        "Name":  "Do you know their guilty pleasure activity?",
+        "Difficulty Level":  "Level 1",
+        "Question Type":  "Fun \u0026 Random"
+    }
+]
