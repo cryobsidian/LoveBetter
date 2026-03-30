@@ -5,146 +5,74 @@ import type { AnswerValue, Question, QuestionCategory, SourceCategory } from "..
 type RawQuestion = {
   Name: string;
   "Difficulty Level": string;
-  "Question Type": Exclude<SourceCategory, "Emotional Needs" | "Stress & Coping">;
+  "Question Type": SourceCategory;
 };
 
 const rawQuestionRows = rawQuestions as RawQuestion[];
 
-const categoryMap: Record<Exclude<SourceCategory, "Emotional Needs" | "Stress & Coping">, QuestionCategory> = {
-  "Daily Habits": "Daily Habits",
-  "Food & Dining Style": "Preferences",
-  "Fun & Random": "Lifestyle",
-  "Lifestyle & Comfort": "Lifestyle",
-  "Money & Shopping Habits": "Lifestyle",
-  "Personality and Tendencies": "Emotional Needs",
-  "Preference and Taste": "Preferences",
-  "Relationship Awareness": "Emotional Needs",
-  "Social & Leisure": "Lifestyle",
-  "Travel & Exploration": "Lifestyle",
-};
-
 const feedbackByCategory: Record<QuestionCategory, Record<AnswerValue, string>> = {
   "Daily Habits": {
     yes: "That kind of everyday awareness usually makes care feel more natural.",
-    mid: "There may be a few routines here that are still easy to miss.",
-    no: "A small day-to-day detail like this can be a gentle place to get more curious.",
+    mid: "There may still be a few routine patterns here that are easy to miss.",
+    no: "A small daily detail like this can be a simple place to get more curious.",
   },
-  Preferences: {
+  "Food & Dining Style": {
+    yes: "Knowing food habits and cravings often shows up in thoughtful everyday choices.",
+    mid: "This could be something to notice more casually over time.",
+    no: "Food preferences are usually easy to explore in a low-pressure way.",
+  },
+  "Fun & Random": {
+    yes: "Little playful details often make someone feel memorably known.",
+    mid: "There is probably more texture here than you know yet.",
+    no: "A light question like this can be fun to ask without making it serious.",
+  },
+  "Lifestyle & Comfort": {
+    yes: "Comfort patterns often shape how someone feels most at ease.",
+    mid: "You may know some of this already, but there is likely more to notice.",
+    no: "This could become an easy conversation the next time comfort or routines come up.",
+  },
+  "Money & Shopping Habits": {
+    yes: "Knowing practical habits like this can prevent small misunderstandings later.",
+    mid: "There may be a few habits or preferences here that are still unclear.",
+    no: "This is a useful area to learn gradually because it affects everyday decisions.",
+  },
+  "Personality and Tendencies": {
+    yes: "That kind of awareness usually helps you respond to them more thoughtfully.",
+    mid: "There may be nuance here that becomes clearer in real situations.",
+    no: "Personality patterns are easy to assume, so this is a strong area for curiosity.",
+  },
+  "Preference and Taste": {
     yes: "Knowing small preferences often helps someone feel considered in ordinary moments.",
-    mid: "This could be something to notice over time or ask about casually.",
+    mid: "This could be something to ask directly or notice more intentionally.",
     no: "A simple preference question like this can be easy to explore without pressure.",
   },
-  "Emotional Needs": {
-    yes: "That is a meaningful kind of knowledge because it shapes how supported they feel.",
-    mid: "There may be more nuance here than you have had space to notice yet.",
-    no: "This is a good area to explore gently, since emotional needs are often easy to assume.",
+  "Relationship Awareness": {
+    yes: "That is meaningful knowledge because it shapes how seen and supported they feel.",
+    mid: "You may already know part of this, but there is probably more to learn.",
+    no: "This is a good area to explore gently, since relationship needs are often easy to assume.",
   },
-  "Stress & Coping": {
-    yes: "Awareness like this can make stressful moments feel less lonely for both of you.",
-    mid: "You may already know part of this, but there is probably more to learn in context.",
-    no: "Stress patterns are worth learning slowly because they matter most when things feel hard.",
+  "Social & Leisure": {
+    yes: "Awareness like this helps you understand how they like to spend their energy.",
+    mid: "There is probably more to learn here by observing or spending time together.",
+    no: "This can be a natural thing to explore through conversation or shared plans.",
   },
-  Lifestyle: {
-    yes: "That kind of broader context helps you understand how they move through life.",
-    mid: "There is probably a little more texture here to notice together.",
-    no: "This could become an easy conversation starter the next time it comes up naturally.",
+  "Travel & Exploration": {
+    yes: "Knowing how they approach travel can reveal a lot about comfort and curiosity.",
+    mid: "There may still be preferences here that have not surfaced clearly yet.",
+    no: "Travel questions are often an easy way to learn more without much pressure.",
   },
 };
-
-const manualQuestions: Question[] = [
-  createManualQuestion(
-    "Do you know what usually helps them feel emotionally safe after a hard day?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know how they most like to be comforted when they feel overwhelmed?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what kind of reassurance matters most to them?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what makes them feel especially appreciated in the relationship?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know how they usually show they need support without saying it directly?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what kind of check-in helps them open up when something feels off?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what kind of conflict repair feels most reassuring to them?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what helps them feel seen when they have had a draining week?",
-    "Emotional Needs",
-    "Emotional Needs",
-  ),
-  createManualQuestion(
-    "Do you know what their earliest signs of stress usually look like?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know whether they prefer space or company when they are stressed?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know what tends to calm them down fastest after a tense moment?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know what usually makes their stress worse without meaning to?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know how they tend to act when they are close to burnout?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know what kind of support feels helpful to them during a busy week?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know whether they like to talk through stress right away or later on?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-  createManualQuestion(
-    "Do you know how they usually recover after a socially or emotionally heavy day?",
-    "Stress & Coping",
-    "Stress & Coping",
-  ),
-];
 
 const generatedQuestions: Question[] = rawQuestionRows
   .filter((row) => row["Difficulty Level"] === "Level 1")
   .map((row, index) => {
-    const sourceCategory = row["Question Type"];
-    const category = categoryMap[sourceCategory];
+    const category = row["Question Type"];
 
     return {
       id: ["tier1", index + 1, slugify(row.Name)].join("-"),
       text: row.Name.trim(),
       category,
-      sourceCategory,
+      sourceCategory: category,
       tier: 1,
       feedback_yes: feedbackByCategory[category].yes,
       feedback_mid: feedbackByCategory[category].mid,
@@ -152,26 +80,9 @@ const generatedQuestions: Question[] = rawQuestionRows
     };
   });
 
-export const questionBank: Question[] = [...generatedQuestions, ...manualQuestions];
+export const questionBank: Question[] = generatedQuestions;
 
 export const questionBankById = new Map(questionBank.map((question) => [question.id, question]));
-
-function createManualQuestion(
-  text: string,
-  category: QuestionCategory,
-  sourceCategory: Extract<SourceCategory, "Emotional Needs" | "Stress & Coping">,
-): Question {
-  return {
-    id: `manual-${slugify(text)}`,
-    text,
-    category,
-    sourceCategory,
-    tier: 1,
-    feedback_yes: feedbackByCategory[category].yes,
-    feedback_mid: feedbackByCategory[category].mid,
-    feedback_no: feedbackByCategory[category].no,
-  };
-}
 
 function slugify(value: string): string {
   return value
@@ -179,5 +90,3 @@ function slugify(value: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
-
-

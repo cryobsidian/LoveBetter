@@ -1,12 +1,5 @@
 export type QuestionCategory =
   | "Daily Habits"
-  | "Preferences"
-  | "Emotional Needs"
-  | "Stress & Coping"
-  | "Lifestyle";
-
-export type SourceCategory =
-  | "Daily Habits"
   | "Food & Dining Style"
   | "Fun & Random"
   | "Lifestyle & Comfort"
@@ -15,9 +8,9 @@ export type SourceCategory =
   | "Preference and Taste"
   | "Relationship Awareness"
   | "Social & Leisure"
-  | "Travel & Exploration"
-  | "Emotional Needs"
-  | "Stress & Coping";
+  | "Travel & Exploration";
+
+export type SourceCategory = QuestionCategory;
 
 export type AnswerValue = "yes" | "mid" | "no";
 
