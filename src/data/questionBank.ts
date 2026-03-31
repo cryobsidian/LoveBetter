@@ -2,14 +2,16 @@ import rawQuestions from "./questions.generated.json";
 
 import type { AnswerValue, Question, QuestionCategory, SourceCategory } from "../types";
 
+// describe the shape of the imported source data.
 type RawQuestion = {
   Name: string;
   "Difficulty Level": string;
   "Question Type": SourceCategory;
 };
+// tells TypeScript, “Treat this imported JSON as an array of RawQuestion objects.
+const rawQuestionRows = rawQuestions as RawQuestion[]; // RawQuestion[] is a type assertion that tells TypeScript to treat rawQuestions as an array of RawQuestion objects.
 
-const rawQuestionRows = rawQuestions as RawQuestion[];
-
+//  lookup table that says, for every category, define three feedback responses: one for yes, one for mid, and one for no
 const feedbackByCategory: Record<QuestionCategory, Record<AnswerValue, string>> = {
   "Daily Habits": {
     yes: "That kind of everyday awareness usually makes care feel more natural.",
