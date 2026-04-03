@@ -12,6 +12,8 @@ export type QuestionCategory =
 
 export type SourceCategory = QuestionCategory;
 
+export type PackId = "standard" | QuestionCategory;
+
 export type AnswerValue = "yes" | "mid" | "no";
 
 export type SessionState = "START" | "IN_PROGRESS" | "COMPLETED";
@@ -27,14 +29,32 @@ export type Question = {
   feedback_no: string;
 };
 
+export type QuestionPack = {
+  id: PackId;
+  label: string;
+  description: string;
+  category?: QuestionCategory;
+};
+
 export type SessionSnapshot = {
   sessionState: SessionState;
+  packId: PackId;
   questionIds: string[];
   answers: Record<string, AnswerValue>;
   currentIndex: number;
   startedAt: string;
   completedAt?: string;
 };
+
+export type SavedAnswerRecord = {
+  questionId: string;
+  answer: AnswerValue;
+  answeredAt: string;
+  packId: PackId;
+  questionCategory: QuestionCategory;
+};
+
+export type LatestAnswerHistory = Record<string, SavedAnswerRecord>;
 
 export type ExploreItem = {
   question: Question;

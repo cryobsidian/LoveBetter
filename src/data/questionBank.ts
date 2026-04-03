@@ -1,17 +1,35 @@
 import rawQuestions from "./questions.generated.json";
 
-import type { AnswerValue, Question, QuestionCategory, SourceCategory } from "../types";
+import type {
+  AnswerValue,
+  PackId,
+  Question,
+  QuestionCategory,
+  QuestionPack,
+  SourceCategory,
+} from "../types";
 
-// describe the shape of the imported source data.
 type RawQuestion = {
   Name: string;
   "Difficulty Level": string;
   "Question Type": SourceCategory;
 };
-// tells TypeScript, “Treat this imported JSON as an array of RawQuestion objects.
-const rawQuestionRows = rawQuestions as RawQuestion[]; // RawQuestion[] is a type assertion that tells TypeScript to treat rawQuestions as an array of RawQuestion objects.
 
-//  lookup table that says, for every category, define three feedback responses: one for yes, one for mid, and one for no
+const rawQuestionRows = rawQuestions as RawQuestion[];
+
+export const questionCategories: QuestionCategory[] = [
+  "Daily Habits",
+  "Food & Dining Style",
+  "Fun & Random",
+  "Lifestyle & Comfort",
+  "Money & Shopping Habits",
+  "Personality and Tendencies",
+  "Preference and Taste",
+  "Relationship Awareness",
+  "Social & Leisure",
+  "Travel & Exploration",
+];
+
 const feedbackByCategory: Record<QuestionCategory, Record<AnswerValue, string>> = {
   "Daily Habits": {
     yes: "That kind of everyday awareness usually makes care feel more natural.",
@@ -65,6 +83,22 @@ const feedbackByCategory: Record<QuestionCategory, Record<AnswerValue, string>> 
   },
 };
 
+export const questionPacks: QuestionPack[] = [
+  {
+    id: "standard",
+    label: "Standard",
+    description: "A mixed self-check across the full question bank.",
+  },
+  ...questionCategories.map((category) => ({
+    id: category,
+    label: category,
+    description: `A focused self-check built from ${category.toLowerCase()} questions.`,
+    category,
+  })),
+];
+
+export const questionPacksById = new Map(questionPacks.map((pack) => [pack.id, pack]));
+
 const generatedQuestions: Question[] = rawQuestionRows
   .filter((row) => row["Difficulty Level"] === "Level 1")
   .map((row, index) => {
@@ -85,6 +119,25 @@ const generatedQuestions: Question[] = rawQuestionRows
 export const questionBank: Question[] = generatedQuestions;
 
 export const questionBankById = new Map(questionBank.map((question) => [question.id, question]));
+
+export function getQuestionsForPack(packId: PackId): Question[] {
+  if (packId === "standard") {
+    return questionBank;
+  }
+
+  return questionBank.filter((question) => question.category === packId);
+}
+
+export function getPackLabel(packId: PackId): string {
+  return questionPacksById.get(packId)?.label ?? "Standard";
+}
+
+export function getPackDescription(packId: PackId): string {
+  return (
+    questionPacksById.get(packId)?.description ??
+    "A mixed self-check across the full question bank."
+  );
+}
 
 function slugify(value: string): string {
   return value

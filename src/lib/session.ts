@@ -1,5 +1,13 @@
-import { questionBank, questionBankById } from "../data/questionBank";
-import type { AnswerValue, ExploreItem, Question, SessionSnapshot } from "../types";
+import { getQuestionsForPack, questionBankById } from "../data/questionBank";
+import type {
+  AnswerValue,
+  ExploreItem,
+  LatestAnswerHistory,
+  PackId,
+  Question,
+  SavedAnswerRecord,
+  SessionSnapshot,
+} from "../types";
 
 export const QUESTIONS_PER_SESSION = 12;
 
@@ -8,11 +16,12 @@ const exploreNudges: Record<Extract<AnswerValue, "mid" | "no">, string> = {
   no: "This is a good one to explore gently. Ask about it, watch for it over time, or make space to learn together.",
 };
 
-export function createSession(): SessionSnapshot {
-  const selectedQuestions = shuffle(questionBank).slice(0, QUESTIONS_PER_SESSION);
+export function createSession(packId: PackId): SessionSnapshot {
+  const selectedQuestions = shuffle(getQuestionsForPack(packId)).slice(0, QUESTIONS_PER_SESSION);
 
   return {
     sessionState: "IN_PROGRESS",
+    packId,
     questionIds: selectedQuestions.map((question) => question.id),
     answers: {},
     currentIndex: 0,
@@ -91,6 +100,47 @@ export function getExploreItems(session: SessionSnapshot): ExploreItem[] {
       };
     })
     .filter((item): item is ExploreItem => Boolean(item));
+}
+
+export function buildLatestAnswerRecords(session: SessionSnapshot): SavedAnswerRecord[] {
+  const answeredAt = session.completedAt ?? new Date().toISOString();
+
+  return Object.entries(session.answers)
+    .map(([questionId, answer]) => {
+      const question = questionBankById.get(questionId);
+
+      if (!question) {
+        return null;
+      }
+
+      return {
+        questionId,
+        answer,
+        answeredAt,
+        packId: session.packId,
+        questionCategory: question.category,
+      };
+    })
+    .filter((record): record is SavedAnswerRecord => Boolean(record));
+}
+
+export function mergeLatestAnswerHistory(
+  existingHistory: LatestAnswerHistory,
+  nextRecords: SavedAnswerRecord[],
+): LatestAnswerHistory {
+  const nextHistory = { ...existingHistory };
+
+  nextRecords.forEach((record) => {
+    nextHistory[record.questionId] = record;
+  });
+
+  return nextHistory;
+}
+
+export function getSortedLatestAnswerRecords(history: LatestAnswerHistory): SavedAnswerRecord[] {
+  return Object.values(history).sort((left, right) => {
+    return new Date(right.answeredAt).getTime() - new Date(left.answeredAt).getTime();
+  });
 }
 
 function shuffle<T>(items: T[]): T[] {
