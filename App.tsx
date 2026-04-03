@@ -67,7 +67,6 @@ export default function App() {
     ? sessionQuestions[session.currentIndex] ?? sessionQuestions[0]
     : null;
   const selectedAnswer = currentQuestion ? session?.answers[currentQuestion.id] : undefined;
-  const feedbackMessage = getFeedbackMessage(currentQuestion, selectedAnswer);
   const answerSummary = session ? summarizeAnswers(session) : null;
   const exploreItems = session ? getExploreItems(session) : [];
   const answeredCount = session ? Object.keys(session.answers).length : 0;
@@ -170,7 +169,6 @@ export default function App() {
             <QuestionScreen
               answeredCount={answeredCount}
               currentQuestion={currentQuestion}
-              feedbackMessage={feedbackMessage}
               onAnswer={handleAnswer}
               onNext={handleNext}
               progressRatio={progressRatio}
@@ -262,7 +260,6 @@ function IntroScreen(props: { onBack: () => void; onStart: () => void }) {
 function QuestionScreen(props: {
   answeredCount: number;
   currentQuestion: Question;
-  feedbackMessage: string;
   onAnswer: (answer: AnswerValue) => void;
   onNext: () => void;
   progressRatio: number;
@@ -306,15 +303,11 @@ function QuestionScreen(props: {
         </View>
 
         {props.selectedAnswer ? (
-          <View style={styles.feedbackCard}>
-            <Text style={styles.feedbackTitle}>Reflection</Text>
-            <Text style={styles.feedbackBody}>{props.feedbackMessage}</Text>
-            <Pressable style={styles.primaryButtonCompact} onPress={props.onNext}>
-              <Text style={styles.primaryButtonText}>
-                {props.answeredCount >= props.totalCount ? "See summary" : "Next prompt"}
-              </Text>
-            </Pressable>
-          </View>
+          <Pressable style={styles.primaryButtonCompact} onPress={props.onNext}>
+            <Text style={styles.primaryButtonText}>
+              {props.answeredCount >= props.totalCount ? "See summary" : "Next prompt"}
+            </Text>
+          </Pressable>
         ) : null}
       </View>
     </View>
@@ -412,22 +405,6 @@ function SummaryCard(props: { title: string; value: number; tone: "warm" | "soft
       <Text style={styles.summaryLabel}>{props.title}</Text>
     </View>
   );
-}
-
-function getFeedbackMessage(question: Question | null, answer?: AnswerValue) {
-  if (!question || !answer) {
-    return "";
-  }
-
-  if (answer === "yes") {
-    return question.feedback_yes;
-  }
-
-  if (answer === "mid") {
-    return question.feedback_mid;
-  }
-
-  return question.feedback_no;
 }
 
 function formatDate(value: string) {
@@ -710,26 +687,6 @@ const styles = StyleSheet.create({
   },
   answerLabelSelected: {
     color: "#fff7f1",
-  },
-  feedbackCard: {
-    backgroundColor: theme.cream,
-    borderRadius: 24,
-    padding: 18,
-    gap: 12,
-    borderWidth: 1,
-    borderColor: "rgba(221, 93, 67, 0.14)",
-  },
-  feedbackTitle: {
-    color: theme.coral,
-    fontSize: 12,
-    fontWeight: "800",
-    letterSpacing: 1.3,
-    textTransform: "uppercase",
-  },
-  feedbackBody: {
-    color: theme.ink,
-    fontSize: 16,
-    lineHeight: 25,
   },
   summaryGrid: {
     flexDirection: "row",
