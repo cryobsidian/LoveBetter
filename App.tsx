@@ -97,7 +97,7 @@ export default function App() {
   }
 
   async function handleAnswer(answer: AnswerValue) {
-    if (!session || !currentQuestion || selectedAnswer) {
+    if (!session || !currentQuestion) {
       return;
     }
 
