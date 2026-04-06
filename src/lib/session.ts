@@ -90,7 +90,7 @@ export function getExploreItems(session: SessionSnapshot): ExploreItem[] {
       return {
         question,
         answer,
-        feedback: question.feedback[answer],
+        feedback: question.feedbackNo,
       };
     })
     .filter((item): item is ExploreItem => Boolean(item));

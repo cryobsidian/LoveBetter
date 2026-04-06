@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import { normalizeQuestionId } from "../data/questionBank";
 import type { AnswerValue, LatestAnswerHistory, SessionSnapshot } from "../types";
 
 const STORAGE_PREFIX = "love-better/";
@@ -14,15 +15,17 @@ export async function loadStoredSession(): Promise<SessionSnapshot | null> {
       return null;
     }
 
-    const parsed = JSON.parse(rawValue) as Omit<SessionSnapshot, "packId" | "answers"> & {
+    const parsed = JSON.parse(rawValue) as Omit<SessionSnapshot, "packId" | "answers" | "questionIds"> & {
       answers?: Record<string, unknown>;
       packId?: SessionSnapshot["packId"];
+      questionIds?: unknown;
     };
 
     return {
       ...parsed,
       answers: normalizeAnswerMap(parsed.answers),
       packId: parsed.packId ?? "standard",
+      questionIds: normalizeQuestionIds(parsed.questionIds),
     };
   } catch {
     return null;
@@ -56,15 +59,19 @@ export async function loadLatestAnswerHistory(): Promise<LatestAnswerHistory> {
     return Object.fromEntries(
       Object.entries(parsed).flatMap(([questionId, record]) => {
         const answer = normalizeAnswerValue(record?.answer);
+        const normalizedQuestionId = normalizeQuestionId(questionId);
 
         if (!answer || typeof record?.answeredAt !== "string" || typeof record?.questionCategory !== "string") {
           return [];
         }
 
         return [[
-          questionId,
+          normalizedQuestionId,
           {
-            questionId: typeof record.questionId === "string" ? record.questionId : questionId,
+            questionId:
+              typeof record.questionId === "string"
+                ? normalizeQuestionId(record.questionId)
+                : normalizedQuestionId,
             answer,
             answeredAt: record.answeredAt,
             packId: record.packId ?? "standard",
@@ -101,10 +108,21 @@ function normalizeAnswerMap(answers?: Record<string, unknown>): Record<string, A
   return Object.fromEntries(
     Object.entries(answers).flatMap(([questionId, answer]) => {
       const normalizedAnswer = normalizeAnswerValue(answer);
+      const normalizedQuestionId = normalizeQuestionId(questionId);
 
-      return normalizedAnswer ? [[questionId, normalizedAnswer]] : [];
+      return normalizedAnswer ? [[normalizedQuestionId, normalizedAnswer]] : [];
     }),
   );
+}
+
+function normalizeQuestionIds(questionIds: unknown): string[] {
+  if (!Array.isArray(questionIds)) {
+    return [];
+  }
+
+  return questionIds
+    .filter((questionId): questionId is string => typeof questionId === "string")
+    .map((questionId) => normalizeQuestionId(questionId));
 }
 
 function normalizeAnswerValue(answer: unknown): AnswerValue | null {

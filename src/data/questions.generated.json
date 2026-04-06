@@ -1,1402 +1,1402 @@
 [
   {
+    "ID": "t1-1",
     "Name": "Do you know their favorite comfort food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their comfort food gives you an easy way to care for them on a hard day. Keep noticing when they usually want it most.",
     "Feedback No": "The next time food comes up, mention your own comfort meal first, then ask what they reach for when they want something familiar. A real story about a long day will make this feel natural."
   },
   {
+    "ID": "t1-2",
     "Name": "Do you know their favorite snack?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their go-to snack helps with small thoughtful gestures. Pay attention to whether they like it for convenience, taste, or mood.",
     "Feedback No": "Use a casual snack run to ask this. You can say what you usually grab, then ask what they always end up reaching for without thinking."
   },
   {
+    "ID": "t1-3",
     "Name": "Do you know their favorite dessert?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their favorite dessert makes celebrations and ordinary treats easier to get right. It is worth remembering the exact flavor or style they like.",
     "Feedback No": "Bring this up when you pass a bakery, cafe, or menu. Ask what dessert they would choose if they could only pick one, then follow up on why that one wins."
   },
   {
+    "ID": "t1-4",
     "Name": "Do you know what drink they order most often?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their usual drink helps you anticipate their habits in a simple but caring way. Notice whether it changes by time of day or mood.",
     "Feedback No": "The next time you order drinks together, say your own default order first and ask what they almost always pick. Asking about their usual order is easier than asking for a favorite in the abstract."
   },
   {
+    "ID": "t1-5",
     "Name": "Do you know what cuisine they enjoy the most?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their favorite cuisine makes date planning and food choices much easier. It also tells you what flavors and experiences they naturally lean toward.",
     "Feedback No": "Start by talking about a place you have wanted to try, then ask what kind of cuisine they never really get tired of. From there, ask what makes that cuisine stand out for them."
   },
   {
+    "ID": "t1-6",
     "Name": "Do you know their least favorite food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing what they dislike can be just as useful as knowing what they love. It helps you avoid thoughtful mistakes.",
     "Feedback No": "A simple way in is to talk about foods you cannot stand, then ask if they have one ingredient or dish they avoid whenever possible. People usually answer this faster than a favorite."
   },
   {
+    "ID": "t1-7",
     "Name": "Do you know their favorite fruit?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing a small preference like this shows attention to detail. These ordinary details often make someone feel surprisingly known.",
     "Feedback No": "Use grocery shopping, a smoothie place, or a casual food chat to ask what fruit they actually enjoy most. If needed, offer your own answer first so it feels conversational."
   },
   {
+    "ID": "t1-8",
     "Name": "Do you know how spicy they like their food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their spice tolerance helps you choose places and dishes without guesswork. It is a practical detail that matters more than it seems.",
     "Feedback No": "Ask this when you are choosing food together. You can mention your own spice tolerance first, then ask whether they like food mild, medium, or very spicy."
   },
   {
+    "ID": "t1-9",
     "Name": "Do you know what they usually crave at night?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their late-night craving gives you insight into their comfort habits. It is also one of those details that can make a spontaneous gesture land well.",
     "Feedback No": "Bring this up in the evening when both of you are hungry or tired. Ask what they suddenly want at night when they are too lazy to think too hard."
   },
   {
+    "ID": "t1-10",
     "Name": "Do you know whether they prefer sweet or savory?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing whether they lean sweet or savory helps you predict a lot of food choices. It is a simple preference that often shows up everywhere.",
     "Feedback No": "This is easy to ask while sharing snacks or looking at a menu. Frame it as a quick either-or question, then ask for an example so the answer becomes more specific."
   },
   {
+    "ID": "t1-11",
     "Name": "Do you know their favorite ice cream flavor?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their favorite ice cream flavor gives you an easy win for future treats. Remembering the exact flavor matters more than just the brand.",
     "Feedback No": "Use a dessert conversation or a walk past an ice cream shop to ask what flavor they would pick first. If they hesitate, ask what they order most often instead."
   },
   {
+    "ID": "t1-12",
     "Name": "Do you know what they usually order at a bubble tea shop?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their usual bubble tea order is a very specific detail that can make them feel noticed. These tiny preferences often feel unexpectedly personal.",
     "Feedback No": "Wait until drinks come up, then ask what their standard bubble tea order looks like, including sugar level or toppings. Specific prompts make this easier to answer."
   },
   {
+    "ID": "t1-13",
     "Name": "Do you know their favorite type of bread or pastry?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing a pastry or bread preference is a small detail that can turn into a thoughtful surprise later. It is the kind of detail that feels remembered.",
     "Feedback No": "Ask this in a bakery, cafe, or breakfast conversation. You can point at options and ask which one they almost always end up choosing."
   },
   {
+    "ID": "t1-14",
     "Name": "Do you know their favorite fast food item?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their favorite fast food order helps with casual meals and comfort moments. It also tells you what kind of indulgence they actually enjoy.",
     "Feedback No": "The easiest time to ask is when fast food is already being mentioned. Ask what their automatic order is when they want something fast and familiar."
   },
   {
+    "ID": "t1-15",
     "Name": "Do you know if they prefer hot or cold drinks?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing this preference helps with everyday choices that come up often. It is one of those small habits that quickly becomes useful.",
     "Feedback No": "Ask this when both of you are deciding on coffee, tea, or any drink. Make it easy by turning it into a simple either-or question before asking for examples."
   },
   {
-    "Name": "Do you know what they usually eat when they�re sick?",
+    "ID": "t1-16",
+    "Name": "Do you know what they usually eat when they're sick?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing what they want when they are sick is very practical and caring information. It can help you respond well when they need comfort.",
     "Feedback No": "A gentle way to ask is to talk about what you eat when you are not feeling well, then ask what food feels easiest or most comforting for them when they are sick."
   },
   {
+    "ID": "t1-17",
     "Name": "Do you know their favorite type of chocolate?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their chocolate preference makes small gifts easier to get right. It is a detail that can make a treat feel chosen rather than generic.",
     "Feedback No": "Bring this up around dessert, snacks, or gift ideas. Ask whether they lean toward dark, milk, white, or something with fillings, then ask what usually wins."
   },
   {
+    "ID": "t1-18",
     "Name": "Do you know what they avoid eating if possible?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing what they avoid helps you respect boundaries and preferences without them having to repeat themselves. That kind of awareness matters.",
     "Feedback No": "A natural opening is to talk about foods you usually skip, then ask if there is anything they avoid whenever they can. Ask whether it is about taste, texture, or how it makes them feel."
   },
   {
+    "ID": "t1-19",
     "Name": "Do you know their favorite breakfast choice?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing their favorite breakfast gives you an easy detail for mornings, travel, or thoughtful planning. It also hints at how they like to start the day.",
     "Feedback No": "Use a breakfast conversation to ask what they would happily eat in the morning if time and effort were not a problem. That often gets a clearer answer than asking what they usually eat."
   },
   {
+    "ID": "t1-20",
     "Name": "Do you know what food they would never get tired of?",
     "Difficulty Level": "Level 1",
     "Question Type": "Preference and Taste",
-    "Feedback Yes": "Knowing the one food they never get tired of gives you a strong shortcut into their taste. It is useful because it usually stays true over time.",
     "Feedback No": "Ask this as a fun challenge: if they had to repeat one food more than the others, what would they still be happy eating? Questions framed like a game usually work well."
   },
   {
+    "ID": "t1-21",
     "Name": "Do you know what time they usually wake up?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their usual wake-up time helps you understand their rhythm and when they are most reachable. It is basic but very useful information.",
     "Feedback No": "The next time you talk about sleep or schedules, share your own wake-up time first, then ask what time they usually get up on a normal day and on a free day."
   },
   {
+    "ID": "t1-22",
     "Name": "Do you know what time they usually sleep?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their usual bedtime helps you understand their energy patterns and availability. It also tells you how much rest they try to protect.",
     "Feedback No": "Bring this up when talking about being tired, sleep, or tomorrow's plans. Ask what time they normally end up sleeping when nothing unusual is going on."
   },
   {
+    "ID": "t1-23",
     "Name": "Do you know how long they take to get ready?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing how long they usually take to get ready helps with planning and reduces small frustrations. It is one of those practical details that saves guesswork.",
     "Feedback No": "Use a timing or planning conversation and ask how much time they usually need before heading out. Framing it around routines makes it feel normal rather than picky."
   },
   {
+    "ID": "t1-24",
     "Name": "Do you know their morning routine style?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their morning routine style helps you understand how they like to begin the day. That matters because mornings often set the tone for everything else.",
     "Feedback No": "The next time daily routines come up, describe your own morning style first, then ask whether they like slow mornings, efficient mornings, or something in between."
   },
   {
+    "ID": "t1-25",
     "Name": "Do you know if they skip breakfast often?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing whether they skip breakfast tells you something real about their energy and routine. It can also shape how you plan morning time together.",
     "Feedback No": "This is easiest to ask around breakfast or when someone mentions being hungry early. Ask whether breakfast is something they actually eat or usually push aside."
   },
   {
+    "ID": "t1-26",
     "Name": "Do you know how much water they drink daily?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing this habit gives you a small window into how they take care of themselves day to day. It also helps you notice what routines they are serious about.",
     "Feedback No": "Bring it up lightly during a health or workday routine conversation. Ask whether they are someone who naturally drinks a lot of water or has to remind themselves."
   },
   {
+    "ID": "t1-27",
     "Name": "Do you know their most productive time of day?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing when they are most productive helps you understand when they think best and when they may prefer fewer interruptions. That can improve timing in the relationship too.",
     "Feedback No": "A good opening is to talk about when you personally focus best, then ask what part of the day they usually feel most switched on and capable."
   },
   {
+    "ID": "t1-28",
     "Name": "Do you know how often they exercise?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their exercise rhythm tells you something about their priorities, routine, and energy management. It is useful context, not just a fitness detail.",
     "Feedback No": "Ask this in a casual way when health, schedules, or weekend plans come up. Instead of making it sound like a performance question, ask what movement usually fits into their week."
   },
   {
+    "ID": "t1-29",
     "Name": "Do you know how they usually spend their lunch break?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing how they spend lunch helps you understand what their middle-of-the-day reset looks like. That can tell you a lot about their work rhythm.",
     "Feedback No": "Use a workday conversation and ask what lunch usually looks like for them: eating quickly, scrolling alone, stepping out, or talking to people. Options help them answer faster."
   },
   {
+    "ID": "t1-30",
     "Name": "Do you know what they do right before bed?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their pre-sleep habit helps you understand how they wind down and what helps them settle. These habits are often more personal than they seem.",
     "Feedback No": "The next time sleep comes up, ask what they usually do in the last fifteen or thirty minutes before bed. Asking about the final stretch makes the answer more concrete."
   },
   {
+    "ID": "t1-31",
     "Name": "Do you know if they check their phone first thing in the morning?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing this habit tells you how they ease into the day and what grabs their attention first. It is a small clue about stress and routine too.",
     "Feedback No": "A simple opener is to admit your own first-morning habit, then ask whether they look at their phone right away or try to avoid it at first."
   },
   {
+    "ID": "t1-32",
     "Name": "Do you know how often they nap?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing whether they nap tells you a lot about their energy habits and recovery style. It is a surprisingly useful detail for daily life.",
     "Feedback No": "Ask this when both of you are tired or talking about sleep. You can make it playful by asking if they are a never-nap person, an occasional nap person, or a nap expert."
   },
   {
+    "ID": "t1-33",
     "Name": "Do you know if they prefer structured or flexible days?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing whether they like structure or flexibility helps you predict how they handle plans, stress, and free time. That is important relationship information.",
     "Feedback No": "Bring this up while planning something. Ask whether they feel calmer with a clear plan or happier when the day has room to move."
   },
   {
+    "ID": "t1-34",
     "Name": "Do you know if they multitask often?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing whether they multitask helps you understand how they work and what kind of environment feels normal to them. It can also explain communication habits.",
     "Feedback No": "Ask this when talking about work or chores. You can say how you usually handle multiple tasks, then ask whether they jump between things or prefer one thing at a time."
   },
   {
+    "ID": "t1-35",
     "Name": "Do you know how they unwind after a long day?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing how they unwind is one of the best ways to care for them well. It tells you what actually helps them come back to themselves.",
     "Feedback No": "The next time one of you has a tiring day, ask what usually helps them decompress fastest. If needed, give examples like quiet time, food, talking, gaming, or a shower."
   },
   {
+    "ID": "t1-36",
     "Name": "Do you know how they start their work or study sessions?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing how they begin work or study helps you understand what gets them focused. This can matter a lot if you ever share space or time while they are concentrating.",
     "Feedback No": "Ask this when talking about productivity. You can ask whether they ease in slowly, make a list first, set up their space, or just dive straight in."
   },
   {
+    "ID": "t1-37",
     "Name": "Do you know how they handle deadlines?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing how they handle deadlines helps you understand their stress pattern and planning style. It gives you better context when pressure is high.",
     "Feedback No": "Use a conversation about work, school, or responsibilities and ask whether they usually start early, pace themselves, or sprint near the end. Specific choices make it easier to answer honestly."
   },
   {
+    "ID": "t1-38",
     "Name": "Do you know if they prefer working alone or with others?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing this helps you understand how they think best and what kind of support feels useful to them. It affects both productivity and social energy.",
     "Feedback No": "A natural way in is to ask whether they get more done alone or whether other people help them stay motivated. You can compare it with your own style first."
   },
   {
+    "ID": "t1-39",
     "Name": "Do you know their typical bedtime habits?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their bedtime habits gives you more than a schedule. It shows how they relax, what they need for comfort, and what they do to shut the day off.",
     "Feedback No": "Ask about the little things around bedtime, not just the time. You can ask whether they scroll, read, snack, set alarms, or need the room a certain way."
   },
   {
+    "ID": "t1-40",
     "Name": "Do you know how often they take breaks during work?",
     "Difficulty Level": "Level 1",
     "Question Type": "Daily Habits",
-    "Feedback Yes": "Knowing their break habits helps you understand their focus style and how they manage energy. That is useful if you want to read their work rhythm accurately.",
     "Feedback No": "Bring this up during a work or study chat and ask whether they are the kind of person who takes regular breaks or keeps pushing until they are forced to stop."
   },
   {
+    "ID": "t1-41",
     "Name": "Do you know if they consider themselves introverted or extroverted?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing how they describe their social energy helps you understand what drains or restores them. That is a helpful lens for many situations.",
     "Feedback No": "Ask this when talking about social plans or recovery after a busy day. Instead of making it sound like a label test, ask where they think they fall and why."
   },
   {
-    "Name": "Do you know how they react when they�re stressed?",
+    "ID": "t1-42",
+    "Name": "Do you know how they react when they're stressed?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing their stress response helps you respond with more precision and less guessing. This is one of the most practical forms of relationship knowledge.",
     "Feedback No": "A good way in is to talk about how stress shows up in you first, then ask what usually happens to them under pressure. Ask what other people tend to notice first."
   },
   {
-    "Name": "Do you know how they behave when they�re tired?",
+    "ID": "t1-43",
+    "Name": "Do you know how they behave when they're tired?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing how they act when tired helps you read their mood more accurately and take things less personally. It is useful information for everyday patience.",
     "Feedback No": "The next time one of you is exhausted, ask what they are usually like when tired. People often answer better when the feeling is current and easy to recognize."
   },
   {
+    "ID": "t1-44",
     "Name": "Do you know if they prefer planning or being spontaneous?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing this preference helps you plan time together in a way that actually fits them. It can prevent a lot of avoidable friction.",
     "Feedback No": "Use a conversation about weekends, trips, or dates and ask whether they enjoy a clear plan or feel more alive when things stay open. Then ask where they want flexibility and where they do not."
   },
   {
-    "Name": "Do you know how they behave when they�re excited?",
+    "ID": "t1-45",
+    "Name": "Do you know how they behave when they're excited?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing how excitement shows up in them helps you notice joy in real time. It also teaches you what enthusiasm looks like in their style rather than yours.",
     "Feedback No": "Ask this after something good happens or while telling stories. You can say how you act when you are excited, then ask what they usually do that gives it away."
   },
   {
+    "ID": "t1-46",
     "Name": "Do you know whether they overthink small things?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing whether they overthink small things helps you understand how they process uncertainty. That can change how you reassure or communicate with them.",
     "Feedback No": "Bring this up gently by talking about a tiny thing you once overthought, then ask whether they tend to replay small details in their head or let them go quickly."
   },
   {
+    "ID": "t1-47",
     "Name": "Do you know if they make decisions quickly or slowly?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing their decision pace helps you avoid pushing too fast or misreading hesitation. It gives you a better sense of how they get to clarity.",
     "Feedback No": "Ask this when a decision naturally comes up. You can frame it as, do you usually know fast what you want, or do you need time to sit with it first?"
   },
   {
+    "ID": "t1-48",
     "Name": "Do you know what annoys them easily?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing what irritates them helps you avoid preventable friction and understand their boundaries better. This kind of knowledge is practical, not just interesting.",
     "Feedback No": "A light way to ask is to swap small pet peeves. Share one of yours first, then ask what tends to get under their skin faster than it should."
   },
   {
+    "ID": "t1-49",
     "Name": "Do you know what usually cheers them up?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing what lifts their mood gives you a real tool for caring well. It helps you support them in the way that actually lands.",
     "Feedback No": "Ask this after talking about stress or a rough day. You can ask what usually helps most: being alone, being distracted, food, humor, reassurance, or something else."
   },
   {
+    "ID": "t1-50",
     "Name": "Do you know if they get competitive easily?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "Knowing whether they get competitive helps you read their energy in games, sports, and playful situations. It can also help you understand how they handle challenge.",
     "Feedback No": "Bring this up while talking about games, sports, or winning and losing. Ask whether they get fired up easily or mostly stay relaxed unless something really matters."
   },
   {
+    "ID": "t1-51",
     "Name": "Do you know how they handle losing?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up after a game, sports match, or story about losing. Ask what they are usually like when they lose and what part bothers them most."
   },
   {
+    "ID": "t1-52",
     "Name": "Do you know how they usually apologize?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A natural opening is to talk about what makes an apology feel sincere to you, then ask how they usually apologize when they know they were wrong."
   },
   {
+    "ID": "t1-53",
     "Name": "Do you know how they react to criticism?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this gently through a work, school, or family example. It is easier for them to answer if you ask what kind of criticism they take well and what kind hits badly."
   },
   {
+    "ID": "t1-54",
     "Name": "Do you know if they like being the center of attention?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a social setting as the prompt and ask whether they enjoy attention, tolerate it, or usually prefer to step back. A recent event makes this easier to answer honestly."
   },
   {
-    "Name": "Do you know how they behave when they�re bored?",
+    "ID": "t1-55",
+    "Name": "Do you know how they behave when they're bored?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time there is a slow moment, ask what they usually do when boredom hits. If needed, offer examples like scrolling, wandering, snacking, messaging people, or finding a project."
   },
   {
+    "ID": "t1-56",
     "Name": "Do you know if they prefer logic or feelings when deciding?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through a recent decision rather than as a personality label. You can say, when you make a hard choice, do you trust logic first or your feelings first?"
   },
   {
+    "ID": "t1-57",
     "Name": "Do you know if they tend to worry about the future?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is a conversation about plans, uncertainty, or the future. Ask whether they tend to think far ahead and worry, or mostly deal with things when they arrive."
   },
   {
+    "ID": "t1-58",
     "Name": "Do you know how they express excitement?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this right after good news or while telling stories. It is easier for them to notice whether they talk fast, smile, message people, or get physically expressive when they are excited."
   },
   {
+    "ID": "t1-59",
     "Name": "Do you know if they are patient or impatient?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring up a small everyday situation like waiting, traffic, or slow service, then ask whether they think of themselves as patient or easily frustrated."
   },
   {
+    "ID": "t1-60",
     "Name": "Do you know how they react to unexpected changes?",
     "Difficulty Level": "Level 1",
     "Question Type": "Personality and Tendencies",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a recent change of plan as the example and ask what usually happens when something unexpected throws them off. Real examples will tell you more than a general answer."
   },
   {
+    "ID": "t1-61",
     "Name": "Do you know how they feel about big social gatherings?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this after a wedding, party, or crowded event. You can ask whether big gatherings energize them, drain them, or depend entirely on the crowd."
   },
   {
+    "ID": "t1-62",
     "Name": "Do you know how they feel about meeting new people?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple way in is to talk about first impressions, then ask whether meeting new people feels fun, awkward, tiring, or easy for them."
   },
   {
+    "ID": "t1-63",
     "Name": "Do you know their ideal weekend activity?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up while planning the weekend. Ask what their ideal free day actually looks like from morning to night, not just one activity name."
   },
   {
+    "ID": "t1-64",
     "Name": "Do you know their favorite type of movie?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The easiest time to ask is while browsing something to watch. Instead of asking for a favorite movie, ask what kind of movie they almost always enjoy."
   },
   {
+    "ID": "t1-65",
     "Name": "Do you know their favorite way to relax?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this when one of you is tired. You can say what helps you relax first, then ask what actually works best for them when they need to reset."
   },
   {
+    "ID": "t1-66",
     "Name": "Do you know their favorite music genre?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a music moment already happening around you and ask what genre they naturally keep returning to. Follow it up with one artist or song so the answer becomes concrete."
   },
   {
+    "ID": "t1-67",
     "Name": "Do you know their favorite TV show?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when talking about shows you have watched lately. Ask which show they would gladly rewatch or recommend fast without overthinking it."
   },
   {
+    "ID": "t1-68",
     "Name": "Do you know whether they prefer staying in or going out?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "This works best when plans are being made. Ask whether they usually feel more restored by staying in or more alive by going out."
   },
   {
+    "ID": "t1-69",
     "Name": "Do you know how long their social battery usually lasts?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this after a busy social day or before one. You can frame it as, how long can you usually socialize before you start wanting to disappear?"
   },
   {
+    "ID": "t1-70",
     "Name": "Do you know if they prefer daytime or nighttime outings?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a date or outing conversation and ask whether they enjoy daytime plans more or feel more themselves once the evening starts."
   },
   {
+    "ID": "t1-71",
     "Name": "Do you know what kind of games they enjoy?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this around games, apps, or competition. You can give examples like board games, party games, puzzle games, or video games to make the answer easier."
   },
   {
+    "ID": "t1-72",
     "Name": "Do you know their favorite hobby?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A direct but easy version is to ask what hobby they enjoy enough to do even when nobody asks them to. That usually gets a truer answer than asking what they are interested in."
   },
   {
+    "ID": "t1-73",
     "Name": "Do you know how often they go out with friends?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while talking about social life or weekend plans. You are looking for their usual rhythm, not an exact count, so keep the question relaxed."
   },
   {
+    "ID": "t1-74",
     "Name": "Do you know how they usually spend free time alone?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what they naturally drift toward when they have a free block of time and nobody expects anything from them."
   },
   {
+    "ID": "t1-75",
     "Name": "Do you know if they enjoy group activities?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a real example like classes, team events, or group trips. Ask whether group activities usually sound fun to them or feel more like effort."
   },
   {
+    "ID": "t1-76",
     "Name": "Do you know if they like trying new hobbies?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when discussing classes, hobbies, or things to try together. Ask whether trying something new feels exciting to them or mostly inconvenient."
   },
   {
+    "ID": "t1-77",
     "Name": "Do you know if they prefer quiet or lively environments?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "This is easiest to ask through examples: do they feel better in calm spaces with less going on, or places with noise, movement, and energy?"
   },
   {
+    "ID": "t1-78",
     "Name": "Do you know how they feel about crowded places?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this after passing through a busy mall, event, or transport hub. Real crowded situations make it easier for them to describe what they actually feel."
   },
   {
+    "ID": "t1-79",
     "Name": "Do you know if they enjoy events like concerts or festivals?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use concerts, festivals, or live events as the example and ask whether they find that kind of atmosphere exciting, tiring, or only fun in the right mood."
   },
   {
+    "ID": "t1-80",
     "Name": "Do you know how they react to last-minute plans?",
     "Difficulty Level": "Level 1",
     "Question Type": "Social & Leisure",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A practical way in is to ask how they usually feel when plans come together last minute. Some people love the spontaneity and others hate the disruption."
   },
   {
+    "ID": "t1-81",
     "Name": "Do you know how they choose restaurants?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time food planning comes up, ask how they decide where to eat. You can offer choices like reviews, cravings, convenience, price, or mood."
   },
   {
+    "ID": "t1-82",
     "Name": "Do you know what they always order at a cafe?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while ordering coffee or walking past a cafe. A usual order is easier to answer than a favorite because it is based on habit, not perfection."
   },
   {
+    "ID": "t1-83",
     "Name": "Do you know if they prefer sharing food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a shared meal as the prompt and ask whether they enjoy ordering dishes to split or prefer having their own plate untouched."
   },
   {
+    "ID": "t1-84",
     "Name": "Do you know if they like trying new food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A natural opening is to talk about a dish you are unsure about, then ask whether trying unfamiliar food feels fun to them or too risky most of the time."
   },
   {
+    "ID": "t1-85",
     "Name": "Do you know their favorite fast food chain?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when fast food is already being mentioned. Ask which chain they default to when they want something quick and familiar."
   },
   {
+    "ID": "t1-86",
     "Name": "Do you know how they feel about buffets?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "This works best through an opinion question: do buffets feel exciting, overwhelming, wasteful, or worth it to them? Their first reaction usually tells you a lot."
   },
   {
+    "ID": "t1-87",
     "Name": "Do you know their favorite local dish?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this during a food conversation about home, travel, or comfort meals. Local dishes often come with stories, so ask which one they would defend first."
   },
   {
+    "ID": "t1-88",
     "Name": "Do you know how they celebrate with food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what food usually shows up when they want to celebrate something. It could be a type of meal, dessert, restaurant, or ritual."
   },
   {
+    "ID": "t1-89",
     "Name": "Do you know if they eat when stressed?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up gently through your own habits first, then ask whether stress makes them lose appetite, snack more, or reach for comfort food."
   },
   {
+    "ID": "t1-90",
     "Name": "Do you know if they finish their food or leave leftovers?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a real meal as the prompt and ask whether they are more likely to clear the plate or stop when they are done, even if food is left."
   },
   {
+    "ID": "t1-91",
     "Name": "Do you know if they are picky with food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this in a non-judgmental way by framing it around taste, texture, or routine. You want to know whether they are selective with food, not embarrass them for it."
   },
   {
+    "ID": "t1-92",
     "Name": "Do you know if they prefer dine-in or takeaway?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time you plan a meal, ask whether they usually prefer sitting down to eat out or bringing food back and relaxing somewhere else."
   },
   {
+    "ID": "t1-93",
     "Name": "Do you know how adventurous they are with food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful way to ask is whether they treat food as something to explore or something they mostly want to feel safe and familiar with."
   },
   {
+    "ID": "t1-94",
     "Name": "Do you know if they prefer familiar or new places?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while deciding where to eat. It is easier to answer in the moment: do they like returning to known favorites or trying a new place whenever possible?"
   },
   {
+    "ID": "t1-95",
     "Name": "Do you know if they like street food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Street food is easiest to discuss with examples. Ask whether it feels exciting, convenient, risky, or only good in certain places."
   },
   {
+    "ID": "t1-96",
     "Name": "Do you know how often they eat out?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up through routine rather than judgment. Ask how often eating out is normal for them in a usual week."
   },
   {
+    "ID": "t1-97",
     "Name": "Do you know their favorite late-night food option?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time late-night food comes up, ask what they most want when it is late and they are hungry enough to break routine."
   },
   {
+    "ID": "t1-98",
     "Name": "Do you know if they prefer eating alone or with others?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a real meal example and ask whether eating feels more enjoyable with company or whether they sometimes prefer being left alone with food."
   },
   {
+    "ID": "t1-99",
     "Name": "Do you know how they decide what to eat daily?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask what usually decides their daily meals first: mood, convenience, budget, health, cravings, or whatever is already available. That will show you how they think about food."
   },
   {
+    "ID": "t1-100",
     "Name": "Do you know their preferred room temperature?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "An easy way in is through air conditioning, fans, or sleep comfort. Ask what room temperature actually feels right to them, not just what they can tolerate."
   },
   {
+    "ID": "t1-101",
     "Name": "Do you know if they enjoy cooking or prefer buying food?",
     "Difficulty Level": "Level 1",
     "Question Type": "Food & Dining Style",
-    "Feedback Yes": "-",
     "Feedback No": "-"
   },
   {
+    "ID": "t1-102",
     "Name": "Do you know what kind of pillow they prefer?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "An easy way in is through bedtime or travel comfort. Ask what kind of pillow actually feels right to them and whether it is about height, softness, or support."
   },
   {
+    "ID": "t1-103",
     "Name": "Do you know if they like sleeping with lights on or off?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when talking about sleep habits. Ask whether they like a fully dark room or a bit of light, and what makes that more comfortable for them."
   },
   {
+    "ID": "t1-104",
     "Name": "Do you know how tidy they like their space?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good way to ask is through your own habits first, then ask how tidy they like their space to feel before they can fully relax in it."
   },
   {
+    "ID": "t1-105",
     "Name": "Do you know if they prefer silence or background noise?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a real setting as the prompt and ask whether silence feels calming to them or whether they relax better with some background sound."
   },
   {
+    "ID": "t1-106",
     "Name": "Do you know what scent they like most?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this when a candle, perfume, detergent, or cafe smell comes up. Specific examples make it easier for them to notice what scents they actually like."
   },
   {
+    "ID": "t1-107",
     "Name": "Do you know if they prefer texting or calling?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time communication styles come up, ask whether they naturally prefer texting, calling, or depending on the situation and why."
   },
   {
+    "ID": "t1-108",
     "Name": "Do you know what clothing style they feel most comfortable in?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A practical way in is to talk about what you wear when you want to feel most like yourself, then ask what clothing style feels easiest and most comfortable for them."
   },
   {
+    "ID": "t1-109",
     "Name": "Do you know what makes them feel cozy?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this in a calm moment and keep it concrete. You can ask what small things make them feel instantly cozy, like blankets, food, lighting, weather, or company."
   },
   {
+    "ID": "t1-110",
     "Name": "Do you know if they check their phone first thing in the morning?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use your own morning habit as the opener, then ask whether they usually reach for their phone right away or try to keep mornings slower."
   },
   {
+    "ID": "t1-111",
     "Name": "Do you know if they prefer cold or warm showers?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "This is easiest to ask casually while talking about routines. Ask whether they like showers warm enough to relax in or colder and more refreshing."
   },
   {
+    "ID": "t1-112",
     "Name": "Do you know how they like their room lighting?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up in a room you are both in and ask what kind of lighting actually feels good to them: bright, dim, warm, natural, or mixed."
   },
   {
+    "ID": "t1-113",
     "Name": "Do you know what they wear at home most of the time?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple way to ask is what they naturally change into when they are home and no longer trying to look presentable for anyone."
   },
   {
+    "ID": "t1-114",
     "Name": "Do you know if they prefer quiet mornings or active ones?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a morning conversation and ask whether they like the start of the day to feel quiet and gentle or active and moving quickly."
   },
   {
+    "ID": "t1-115",
     "Name": "Do you know if they prefer soft or firm beds?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through sleep comfort rather than as a furniture question. You want to know whether they rest better with a softer bed or something firmer and more supportive."
   },
   {
+    "ID": "t1-116",
     "Name": "Do you know if they like background music at home?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when you are at home or working quietly. Ask whether they like some music in the background or prefer the house to stay mostly silent."
   },
   {
+    "ID": "t1-117",
     "Name": "Do you know what kind of environment helps them relax?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this when talking about stress or downtime. You can say, what kind of environment helps you actually relax once you are tired or overloaded?"
   },
   {
+    "ID": "t1-118",
     "Name": "Do you know what kind of weather makes them comfortable?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Weather is easiest to discuss when the weather itself is annoying. Ask what kind of temperature and atmosphere makes them feel most comfortable in their body."
   },
   {
+    "ID": "t1-119",
     "Name": "Do you know how they behave when they feel comfortable?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask how they know they have fully settled in around people. What changes in their body language, voice, or energy when they feel comfortable?"
   },
   {
+    "ID": "t1-120",
     "Name": "Do you know how they set up their personal space?",
     "Difficulty Level": "Level 1",
     "Question Type": "Lifestyle & Comfort",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this by noticing what someone keeps near them. You can say, how do you usually set up your space when you want it to feel right for you?"
   },
   {
+    "ID": "t1-121",
     "Name": "Do you know their ideal type of vacation?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use travel daydreaming as the prompt and ask what kind of vacation actually sounds ideal to them: rest, adventure, food, nature, cities, or something else."
   },
   {
+    "ID": "t1-122",
     "Name": "Do you know how they handle travel delays?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A practical way in is to ask what usually happens to them when travel plans go wrong. Do they stay calm, get quiet, get irritated, or start fixing things immediately?"
   },
   {
+    "ID": "t1-123",
     "Name": "Do you know if they prefer window or aisle seats?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while talking about flights or comfort. The window versus aisle question is simple, but follow up with why so you learn the real preference."
   },
   {
+    "ID": "t1-124",
     "Name": "Do you know if they pack early or last minute?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up before any trip or even before a busy day out. Ask whether they like to pack early and feel ready or leave it until the last minute."
   },
   {
+    "ID": "t1-125",
     "Name": "Do you know if they prefer mountains or beaches?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "This works best as a quick either-or question first: mountains or beaches. Then ask what each one gives them that the other does not."
   },
   {
+    "ID": "t1-126",
     "Name": "Do you know how they choose travel destinations?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask what usually pulls them toward a place first: scenery, food, price, weather, culture, convenience, or a feeling they want from the trip."
   },
   {
+    "ID": "t1-127",
     "Name": "Do you know if they enjoy road trips?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A natural way in is through travel stories. Ask whether road trips feel fun and freeing to them or mostly long and tiring."
   },
   {
+    "ID": "t1-128",
     "Name": "Do you know their dream country to visit?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a dream-trip conversation and ask which country they most want to visit if they had the chance. Then ask what is drawing them there."
   },
   {
+    "ID": "t1-129",
     "Name": "Do you know if they prefer luxury or budget travel?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through comfort and priorities rather than money judgment. You want to know whether they value ease and comfort most or making the budget stretch further."
   },
   {
+    "ID": "t1-130",
     "Name": "Do you know how they plan itineraries?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up while planning anything. Ask whether they like a detailed itinerary, a loose structure, or almost no plan at all once the trip starts."
   },
   {
+    "ID": "t1-131",
     "Name": "Do you know how they behave on trips?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what they are usually like on trips compared with everyday life. Some people get more relaxed, more curious, more anxious, or more energetic."
   },
   {
+    "ID": "t1-132",
     "Name": "Do you know if they like taking photos while traveling?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while looking at travel photos or memories. You want to know whether they like documenting trips or prefer to stay present and take fewer pictures."
   },
   {
+    "ID": "t1-133",
     "Name": "Do you know if they prefer packed schedules or relaxed trips?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a planning conversation and ask whether trips feel better to them when they are full of activities or when there is room to wander and rest."
   },
   {
+    "ID": "t1-134",
     "Name": "Do you know if they like revisiting places?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple way in is to ask whether they enjoy going back to places they already love or if they mostly want somewhere new each time."
   },
   {
+    "ID": "t1-135",
     "Name": "Do you know if they prefer guided tours or exploring alone?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through travel style: do they like the structure of guided tours or feel more themselves when they can explore alone and figure things out?"
   },
   {
+    "ID": "t1-136",
     "Name": "Do you know how they explore new places?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The next time you talk about a city or destination, ask how they like to get to know a new place once they arrive: walking, planning, asking locals, or following curiosity."
   },
   {
+    "ID": "t1-137",
     "Name": "Do you know how they handle getting lost?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A very practical question is what happens when they get lost. Do they laugh, panic, go quiet, ask for help, or pull out directions immediately?"
   },
   {
+    "ID": "t1-138",
     "Name": "Do you know if they prefer local food or familiar food when traveling?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this in the context of travel comfort. Do they want to try local food as part of the experience, or do they usually fall back on familiar food first?"
   },
   {
+    "ID": "t1-139",
     "Name": "Do you know what they enjoy most about traveling?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up in a memory or dream-trip conversation and ask what part of traveling they actually enjoy most: novelty, food, scenery, freedom, people, or rest."
   },
   {
+    "ID": "t1-140",
     "Name": "Do you know what makes a trip memorable for them?",
     "Difficulty Level": "Level 1",
     "Question Type": "Travel & Exploration",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful way to ask is what usually makes a trip stay with them afterward. It might be who they were with, what they felt, what they saw, or one surprising moment."
   },
   {
+    "ID": "t1-141",
     "Name": "Do you know what they usually spend money on?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this gently through everyday habits. You are trying to learn what categories of spending matter most to them, not how much they spend."
   },
   {
+    "ID": "t1-142",
     "Name": "Do you know if they prefer saving or spending?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple opener is to ask whether they feel more satisfaction from saving money or from using it to enjoy life now. Then listen for when each matters to them."
   },
   {
+    "ID": "t1-143",
     "Name": "Do you know how they decide to buy something?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up around a recent purchase and ask what usually helps them decide: need, price, quality, timing, reviews, or emotion."
   },
   {
+    "ID": "t1-144",
     "Name": "Do you know if they prefer practical or sentimental items?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use gift or shopping examples and ask whether they naturally value useful items more or things that carry meaning and memories."
   },
   {
+    "ID": "t1-145",
     "Name": "Do you know what kind of gifts they like receiving?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this before a birthday or gift-giving moment becomes urgent. It is easier to answer if you ask whether they like practical gifts, experiences, sentimental things, or surprises with thought behind them."
   },
   {
+    "ID": "t1-146",
     "Name": "Do you know their favorite brand?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A light way in is to ask whether there is any brand they keep trusting or feeling drawn back to, and what makes that brand stand out for them."
   },
   {
+    "ID": "t1-147",
     "Name": "Do you know if they compare prices before buying?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this during a shopping conversation and keep it neutral. Do they compare prices carefully first, or decide quickly once something feels right?"
   },
   {
-    "Name": "Do you know what they consider a �worth it� purchase?",
+    "ID": "t1-148",
+    "Name": "Do you know what they consider a 'worth it' purchase?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what kind of purchase feels truly worth it to them even if it costs more. That usually reveals what they value most."
   },
   {
+    "ID": "t1-149",
     "Name": "Do you know if they like surprise gifts?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up before gifts become a guessing game. Ask whether surprise gifts feel exciting to them or whether they prefer to be included in the choice."
   },
   {
+    "ID": "t1-150",
     "Name": "Do you know what small purchase makes them happiest?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple but revealing question is what small purchase reliably improves their mood. It could be food, stationery, skincare, coffee, games, or something very specific."
   },
   {
+    "ID": "t1-151",
     "Name": "Do you know how they feel after spending money?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through a recent purchase. You want to know whether spending usually leaves them satisfied, guilty, excited, relieved, or second-guessing themselves."
   },
   {
+    "ID": "t1-152",
     "Name": "Do you know if they impulse buy often?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good way in is to talk about impulse buys lightly, without judgment. Ask whether they tend to buy on the spot often or usually slow themselves down first."
   },
   {
+    "ID": "t1-153",
     "Name": "Do you know how they prioritize purchases?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up when comparing options for something real. Ask what they usually rank first when choosing what deserves their money or attention."
   },
   {
+    "ID": "t1-154",
     "Name": "Do you know if they track their spending?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this in a practical way: do they keep track of spending closely, loosely, or mostly only when they feel they have to? That usually gets a more honest answer."
   },
   {
+    "ID": "t1-155",
     "Name": "Do you know how often they shop online?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a shopping or delivery conversation as the opener and ask how often online shopping is just convenience for them versus something they actively enjoy."
   },
   {
+    "ID": "t1-156",
     "Name": "Do you know what they hesitate to spend on?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A helpful way to ask is what kinds of things feel hardest for them to justify spending money on, even when they want them."
   },
   {
+    "ID": "t1-157",
     "Name": "Do you know if they prefer quality or quantity?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through a tradeoff question. Do they usually want fewer things that last longer, or more options even if each one matters less?"
   },
   {
+    "ID": "t1-158",
     "Name": "Do you know if they enjoy shopping or find it tiring?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up after shopping together or talking about errands. Ask whether shopping feels fun and energizing to them or mostly draining and annoying."
   },
   {
+    "ID": "t1-159",
     "Name": "Do you know what makes them regret a purchase?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what usually makes a purchase feel bad afterward. It might be the price, the quality, the lack of use, or buying for the wrong reason."
   },
   {
+    "ID": "t1-160",
     "Name": "Do you know how they decide between options?",
     "Difficulty Level": "Level 1",
     "Question Type": "Money & Shopping Habits",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use a real choice as the example and ask how they usually narrow things down when several options all seem decent. Their process matters more than the final choice."
   },
   {
+    "ID": "t1-161",
     "Name": "Do you know how they prefer to celebrate birthdays?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this before a birthday gets close. You want to know whether they like a big social plan, something intimate, something low-key, or almost no fuss at all."
   },
   {
+    "ID": "t1-162",
     "Name": "Do you know what kind of compliments they like?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A natural way in is to talk about compliments that actually land well. Ask whether they prefer compliments about appearance, effort, character, skills, or something more specific."
   },
   {
+    "ID": "t1-163",
     "Name": "Do you know how they react to surprises?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up through past surprise moments and ask whether surprises usually excite them, overwhelm them, or depend entirely on the situation."
   },
   {
+    "ID": "t1-164",
     "Name": "Do you know what makes them feel appreciated?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful question is what actually makes them feel appreciated rather than what should make them feel appreciated. The real answer is usually more specific."
   },
   {
+    "ID": "t1-165",
     "Name": "Do you know how they prefer to communicate when busy?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this during a busy week. You want to know what kind of communication still feels good to them when they are overloaded and cannot engage normally."
   },
   {
+    "ID": "t1-166",
     "Name": "Do you know how they prefer to spend quality time?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good way to ask is what quality time really looks like for them. Is it talking deeply, doing something side by side, going out, or simply being present together?"
   },
   {
+    "ID": "t1-167",
     "Name": "Do you know how they recharge after a long day?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use the end of a long day as the context and ask what actually helps them recover best once their energy is low."
   },
   {
+    "ID": "t1-168",
     "Name": "Do you know what makes them feel supported?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this gently by framing support in concrete terms. Do they feel most supported by advice, practical help, presence, reassurance, space, or something else?"
   },
   {
+    "ID": "t1-169",
     "Name": "Do you know what kind of small gestures they notice?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A strong opening is to ask what small things people do that they notice immediately, even if others might think those gestures are minor."
   },
   {
+    "ID": "t1-170",
     "Name": "Do you know what makes them smile instantly?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up playfully by asking what can reliably make them smile fast, especially on an off day. That usually reveals something very usable."
   },
   {
+    "ID": "t1-171",
     "Name": "Do you know how they like to receive help?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask whether help feels best to them when people jump in, offer first, stay nearby, or wait to be asked. That distinction matters a lot in relationships."
   },
   {
+    "ID": "t1-172",
     "Name": "Do you know how they show appreciation?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good question here is how appreciation naturally comes out of them. Do they say it, do something thoughtful, give something, or show it quietly through behavior?"
   },
   {
+    "ID": "t1-173",
     "Name": "Do you know what kind of messages they like receiving?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use texting as the context and ask what kinds of messages feel especially good to receive from someone they care about."
   },
   {
+    "ID": "t1-174",
     "Name": "Do you know how they behave when they miss someone?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this when talking about distance, travel, or missing people. You want to know what missing someone actually looks like in their behavior."
   },
   {
+    "ID": "t1-175",
     "Name": "Do you know what makes them feel comfortable around you?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful way in is to ask what helps them feel at ease around someone, especially in ordinary moments when nothing special is happening."
   },
   {
+    "ID": "t1-176",
     "Name": "Do you know how they react when plans change?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up through a recent example. Ask what changed plans usually do to their mood first and what helps them adjust more easily."
   },
   {
+    "ID": "t1-177",
     "Name": "Do you know what kind of attention they enjoy?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask what kind of attention feels good to them in daily life. Some people like words, some like presence, some like being noticed quietly without a big show."
   },
   {
+    "ID": "t1-178",
     "Name": "Do you know how they respond to effort from others?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A practical question is how they usually react when someone clearly puts in effort for them. Do they light up, get shy, feel pressured, or want to return it quickly?"
   },
   {
+    "ID": "t1-179",
     "Name": "Do you know how they like to spend time together casually?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask what casual time together feels best to them when there is no special occasion attached. Their answer usually tells you a lot about real compatibility."
   },
   {
+    "ID": "t1-180",
     "Name": "Do you know their favorite emoji?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The easiest way to ask is while texting or reacting to something online. Ask which emoji they end up using the most without thinking."
   },
   {
+    "ID": "t1-181",
     "Name": "Do you know what kind of moments they value most?",
     "Difficulty Level": "Level 1",
     "Question Type": "Relationship Awareness",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what kinds of moments they actually hold onto later: quiet ones, funny ones, thoughtful ones, exciting ones, or something else."
   },
   {
+    "ID": "t1-182",
     "Name": "Do you know what kind of memes they like?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up while sharing memes and ask what type they actually send or save, because people often know their meme taste faster than their humor style in general."
   },
   {
+    "ID": "t1-183",
     "Name": "Do you know their most used phrase?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this casually in conversation by noticing phrases they repeat. Sometimes people do not realize it until you give examples or ask what friends tease them for saying."
   },
   {
+    "ID": "t1-184",
     "Name": "Do you know their favorite time to scroll social media?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use phone habits as the opener and ask when they naturally end up scrolling most: morning, breaks, late at night, or whenever they are avoiding something."
   },
   {
+    "ID": "t1-185",
     "Name": "Do you know what they usually do when bored?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A simple way in is to ask what boredom usually pushes them toward first. You can offer examples like scrolling, snacking, messaging people, or starting random side quests."
   },
   {
+    "ID": "t1-186",
     "Name": "Do you know their favorite app?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this through everyday phone use. Instead of asking for the best app, ask which app they probably open the most or would miss fastest."
   },
   {
+    "ID": "t1-187",
     "Name": "Do you know what song they would sing in the shower?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Bring this up playfully with your own answer first. It is easier for them to respond if the question feels silly on purpose rather than like a test."
   },
   {
+    "ID": "t1-188",
     "Name": "Do you know their favorite color to wear?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A practical opener is to ask what color they wear when they want to feel most comfortable or most like themselves, not just what color they think looks nice."
   },
   {
+    "ID": "t1-189",
     "Name": "Do you know their comfort activity when feeling down?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this gently after talking about hard days. You want to know what activity they drift toward when they feel low and want comfort without much effort."
   },
   {
+    "ID": "t1-190",
     "Name": "Do you know their favorite way to waste time?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A light way to ask is what they can waste a surprising amount of time on without even noticing. That usually gets a fun and honest answer."
   },
   {
-    "Name": "Do you know one small habit they have that most people don�t notice?",
+    "ID": "t1-191",
+    "Name": "Do you know one small habit they have that most people don't notice?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this as a small-observation question: what is one tiny habit or pattern you have that people do not usually notice right away?"
   },
   {
+    "ID": "t1-192",
     "Name": "Do you know what trend they would follow?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Use internet culture or current habits as the context and ask what kind of trend they would actually join if they found it fun enough."
   },
   {
+    "ID": "t1-193",
     "Name": "Do you know what kind of jokes they like?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful version of this question is what kind of jokes actually work on them: dry humor, chaos, wordplay, dark jokes, absurd stuff, or teasing."
   },
   {
-    "Name": "Do you know how they act when they�re playful?",
+    "ID": "t1-194",
+    "Name": "Do you know how they act when they're playful?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this after a playful moment and keep it concrete. What do they do when they are being playful that makes it obvious to people who know them?"
   },
   {
-    "Name": "Do you know what they do when they can�t sleep?",
+    "ID": "t1-195",
+    "Name": "Do you know what they do when they can't sleep?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "The best time to ask is when sleep or late-night habits come up. You want to know what they actually do when sleep is not happening for them."
   },
   {
+    "ID": "t1-196",
     "Name": "Do you know what makes them laugh instantly?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A good opening is to ask what can make them laugh immediately without needing much setup. Fast laughter triggers are usually very specific."
   },
   {
+    "ID": "t1-197",
     "Name": "Do you know how they react to funny videos?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this while watching something funny together. Do they laugh loudly, silently shake, rewatch it, send it to people, or barely react outwardly?"
   },
   {
+    "ID": "t1-198",
     "Name": "Do you know what random thing they enjoy a lot?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A useful phrasing is what random thing they enjoy way more than most people would expect. That tends to surface something memorable."
   },
   {
+    "ID": "t1-199",
     "Name": "Do you know something quirky about them?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "Ask this gently and with curiosity, not as a weirdness test. You are trying to learn one harmless quirk that feels very uniquely them."
   },
   {
+    "ID": "t1-200",
     "Name": "Do you know their guilty pleasure activity?",
     "Difficulty Level": "Level 1",
     "Question Type": "Fun & Random",
-    "Feedback Yes": "-",
-    "Feedback No": "-"
+    "Feedback No": "A playful way in is to ask what activity they would happily do in private even if they would never brag about it out loud."
   }
 ]

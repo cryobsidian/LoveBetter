@@ -4,16 +4,15 @@ import type {
   PackId,
   Question,
   QuestionCategory,
-  QuestionFeedback,
   QuestionPack,
   SourceCategory,
 } from "../types";
 
 type RawQuestion = {
+  ID?: string;
   Name: string;
   "Difficulty Level": string;
   "Question Type": SourceCategory;
-  "Feedback Yes"?: string;
   "Feedback No"?: string;
 };
 
@@ -32,11 +31,6 @@ export const questionCategories: QuestionCategory[] = [
   "Travel & Exploration",
 ];
 
-const defaultQuestionFeedback: QuestionFeedback = {
-  yes: "-",
-  no: "-",
-};
-
 export const questionPacks: QuestionPack[] = [
   {
     id: "standard",
@@ -53,21 +47,28 @@ export const questionPacks: QuestionPack[] = [
 
 export const questionPacksById = new Map(questionPacks.map((pack) => [pack.id, pack]));
 
-const generatedQuestions: Question[] = rawQuestionRows
-  .filter((row) => row["Difficulty Level"] === "Level 1")
-  .map((row, index) => {
-    const text = row.Name.trim();
-    const category = row["Question Type"];
+const levelOneRows = rawQuestionRows.filter((row) => row["Difficulty Level"] === "Level 1");
 
-    return {
-      id: buildQuestionId(index, text),
-      text,
-      category,
-      sourceCategory: category,
-      tier: 1,
-      feedback: getQuestionFeedback(row),
-    };
-  });
+const generatedQuestions: Question[] = levelOneRows.map((row, index) => {
+  const text = row.Name.trim();
+  const category = row["Question Type"];
+
+  return {
+    id: row.ID?.trim() || buildQuestionId(index),
+    text,
+    category,
+    sourceCategory: category,
+    tier: 1,
+    feedbackNo: row["Feedback No"]?.trim() || "-",
+  };
+});
+
+const legacyQuestionIdAliases = new Map<string, string>(
+  levelOneRows.map((row, index) => {
+    const canonicalId = row.ID?.trim() || buildQuestionId(index);
+    return [buildLegacyQuestionId(index, row.Name.trim()), canonicalId];
+  }),
+);
 
 export const questionBank: Question[] = generatedQuestions;
 
@@ -92,15 +93,16 @@ export function getPackDescription(packId: PackId): string {
   );
 }
 
-function buildQuestionId(index: number, value: string): string {
-  return ["tier1", index + 1, slugify(value)].join("-");
+export function normalizeQuestionId(questionId: string): string {
+  return legacyQuestionIdAliases.get(questionId) ?? questionId;
 }
 
-function getQuestionFeedback(row: RawQuestion): QuestionFeedback {
-  return {
-    yes: row["Feedback Yes"]?.trim() || defaultQuestionFeedback.yes,
-    no: row["Feedback No"]?.trim() || defaultQuestionFeedback.no,
-  };
+function buildQuestionId(index: number): string {
+  return `t1-${index + 1}`;
+}
+
+function buildLegacyQuestionId(index: number, value: string): string {
+  return ["tier1", index + 1, slugify(value)].join("-");
 }
 
 function slugify(value: string): string {

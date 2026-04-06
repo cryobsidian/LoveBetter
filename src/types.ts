@@ -16,8 +16,6 @@ export type PackId = "standard" | QuestionCategory;
 
 export type AnswerValue = "yes" | "no";
 
-export type QuestionFeedback = Record<AnswerValue, string>;
-
 export type SessionState = "START" | "IN_PROGRESS" | "COMPLETED";
 
 export type Question = {
@@ -26,7 +24,7 @@ export type Question = {
   category: QuestionCategory;
   sourceCategory: SourceCategory;
   tier: 1;
-  feedback: QuestionFeedback;
+  feedbackNo: string;
 };
 
 export type QuestionPack = {
