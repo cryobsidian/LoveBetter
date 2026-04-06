@@ -9,7 +9,14 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "export:web": "expo export --platform web",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate:questions": "node scripts/generate-questions-data.mjs",
+    "prestart": "npm run generate:questions",
+    "preandroid": "npm run generate:questions",
+    "preios": "npm run generate:questions",
+    "preweb": "npm run generate:questions",
+    "preexport:web": "npm run generate:questions",
+    "pretypecheck": "npm run generate:questions"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",

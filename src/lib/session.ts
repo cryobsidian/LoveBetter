@@ -11,11 +11,6 @@ import type {
 
 export const QUESTIONS_PER_SESSION = 12;
 
-const exploreNudges: Record<Extract<AnswerValue, "mid" | "no">, string> = {
-  mid: "There is already some awareness here. Try asking directly or noticing the pattern in real moments.",
-  no: "This is a good one to explore gently. Ask about it, watch for it over time, or make space to learn together.",
-};
-
 export function createSession(packId: PackId): SessionSnapshot {
   const selectedQuestions = shuffle(getQuestionsForPack(packId)).slice(0, QUESTIONS_PER_SESSION);
 
@@ -70,7 +65,6 @@ export function advanceSession(session: SessionSnapshot): SessionSnapshot {
 export function summarizeAnswers(session: SessionSnapshot) {
   const counts = {
     yes: 0,
-    mid: 0,
     no: 0,
   };
 
@@ -83,8 +77,8 @@ export function summarizeAnswers(session: SessionSnapshot) {
 
 export function getExploreItems(session: SessionSnapshot): ExploreItem[] {
   return Object.entries(session.answers)
-    .filter((entry): entry is [string, Extract<AnswerValue, "mid" | "no">] => {
-      return entry[1] === "mid" || entry[1] === "no";
+    .filter((entry): entry is [string, "no"] => {
+      return entry[1] === "no";
     })
     .map(([questionId, answer]) => {
       const question = questionBankById.get(questionId);
@@ -96,7 +90,7 @@ export function getExploreItems(session: SessionSnapshot): ExploreItem[] {
       return {
         question,
         answer,
-        nudge: exploreNudges[answer],
+        feedback: question.feedback[answer],
       };
     })
     .filter((item): item is ExploreItem => Boolean(item));

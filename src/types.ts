@@ -14,7 +14,9 @@ export type SourceCategory = QuestionCategory;
 
 export type PackId = "standard" | QuestionCategory;
 
-export type AnswerValue = "yes" | "mid" | "no";
+export type AnswerValue = "yes" | "no";
+
+export type QuestionFeedback = Record<AnswerValue, string>;
 
 export type SessionState = "START" | "IN_PROGRESS" | "COMPLETED";
 
@@ -24,9 +26,7 @@ export type Question = {
   category: QuestionCategory;
   sourceCategory: SourceCategory;
   tier: 1;
-  feedback_yes: string;
-  feedback_mid: string;
-  feedback_no: string;
+  feedback: QuestionFeedback;
 };
 
 export type QuestionPack = {
@@ -58,6 +58,6 @@ export type LatestAnswerHistory = Record<string, SavedAnswerRecord>;
 
 export type ExploreItem = {
   question: Question;
-  answer: Extract<AnswerValue, "mid" | "no">;
-  nudge: string;
+  answer: "no";
+  feedback: string;
 };

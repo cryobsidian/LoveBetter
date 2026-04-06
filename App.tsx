@@ -58,7 +58,6 @@ type DashboardItem = {
 
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
-  { value: "mid", label: "Not really" },
   { value: "no", label: "No" },
 ];
 
@@ -77,6 +76,20 @@ const webShadow =
   Platform.OS === "web"
     ? {
         boxShadow: "0 20px 60px rgba(91, 47, 30, 0.12)",
+      }
+    : {};
+
+const webHoverGlow =
+  Platform.OS === "web"
+    ? {
+        boxShadow: "0 28px 84px rgba(74, 46, 38, 0.3)",
+      }
+    : {};
+
+const webHoverGlowPrimary =
+  Platform.OS === "web"
+    ? {
+        boxShadow: "0 30px 88px rgba(34, 24, 22, 0.4)",
       }
     : {};
 
@@ -358,29 +371,13 @@ function HomeScreen(props: {
 
       <View style={styles.packGrid}>
         {props.packs.map((pack) => {
-          const isStandard = pack.id === "standard";
-
           return (
-            <Pressable
+            <PackCardButton
               key={pack.id}
+              pack={pack}
               disabled={props.hasInProgressSession}
-              style={[
-                styles.packCard,
-                isStandard ? styles.packCardPrimary : null,
-                props.hasInProgressSession ? styles.packCardDisabled : null,
-              ]}
               onPress={() => props.onSelectPack(pack.id)}
-            >
-              <View style={styles.packCardHeader}>
-                <Text style={[styles.packCardTitle, isStandard ? styles.packCardTitlePrimary : null]}>
-                  {pack.label}
-                </Text>
-                {isStandard ? <Text style={styles.packBadge}>Recommended</Text> : null}
-              </View>
-              <Text style={[styles.packCardBody, isStandard ? styles.packCardBodyPrimary : null]}>
-                {pack.description}
-              </Text>
-            </Pressable>
+            />
           );
         })}
       </View>
@@ -405,7 +402,7 @@ function IntroScreen(props: { pack: QuestionPack; onBack: () => void; onStart: (
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>How it works</Text>
-        <Text style={styles.cardBody}>You will answer up to 12 prompts with Yes, Not really, or No.</Text>
+        <Text style={styles.cardBody}>You will answer up to 12 prompts with Yes or No.</Text>
         <Text style={styles.cardBody}>You can revise an answer before moving to the next prompt.</Text>
         <Text style={styles.cardBody}>When you finish, the summary highlights things to explore and the dashboard saves your latest completed answers.</Text>
       </View>
@@ -419,6 +416,44 @@ function IntroScreen(props: { pack: QuestionPack; onBack: () => void; onStart: (
         </Pressable>
       </View>
     </View>
+  );
+}
+
+function PackCardButton(props: {
+  pack: QuestionPack;
+  disabled: boolean;
+  onPress: () => void;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const isStandard = props.pack.id === "standard";
+
+  return (
+    <Pressable
+      disabled={props.disabled}
+      onHoverIn={() => setIsHovered(true)}
+      onHoverOut={() => setIsHovered(false)}
+      onPress={props.onPress}
+      style={[
+        styles.packCard,
+        isStandard ? styles.packCardPrimary : null,
+        isHovered && !props.disabled
+          ? isStandard
+            ? styles.packCardHoverPrimary
+            : styles.packCardHover
+          : null,
+        props.disabled ? styles.packCardDisabled : null,
+      ]}
+    >
+      <View style={styles.packCardHeader}>
+        <Text style={[styles.packCardTitle, isStandard ? styles.packCardTitlePrimary : null]}>
+          {props.pack.label}
+        </Text>
+        {isStandard ? <Text style={styles.packBadge}>Recommended</Text> : null}
+      </View>
+      <Text style={[styles.packCardBody, isStandard ? styles.packCardBodyPrimary : null]}>
+        {props.pack.description}
+      </Text>
+    </Pressable>
   );
 }
 
@@ -482,7 +517,7 @@ function QuestionScreen(props: {
   );
 }
 function SummaryScreen(props: {
-  answerSummary: { yes: number; mid: number; no: number };
+  answerSummary: { yes: number; no: number };
   completedAt?: string;
   exploreItems: ReturnType<typeof getExploreItems>;
   onReplay: () => void;
@@ -504,8 +539,7 @@ function SummaryScreen(props: {
       </Text>
 
       <View style={styles.summaryGrid}>
-        <SummaryCard title="Confident" value={props.answerSummary.yes} tone="warm" />
-        <SummaryCard title="Partly known" value={props.answerSummary.mid} tone="soft" />
+        <SummaryCard title="Known" value={props.answerSummary.yes} tone="warm" />
         <SummaryCard title="Still open" value={props.answerSummary.no} tone="light" />
       </View>
 
@@ -517,7 +551,7 @@ function SummaryScreen(props: {
 
         {props.exploreItems.length === 0 ? (
           <Text style={styles.emptyState}>
-            Nothing landed in the unsure bucket this time. That does not mean you know everything, only that this set felt clear today.
+            Nothing landed in the open bucket this time. That does not mean you know everything, only that this set felt clear today.
           </Text>
         ) : (
           props.exploreItems.map((item) => (
@@ -527,7 +561,7 @@ function SummaryScreen(props: {
                 <Text style={styles.exploreAnswer}>{formatAnswer(item.answer)}</Text>
               </View>
               <Text style={styles.explorePrompt}>{item.question.text}</Text>
-              <Text style={styles.exploreNudge}>{item.nudge}</Text>
+              <Text style={styles.exploreNudge}>{item.feedback}</Text>
             </View>
           ))
         )}
@@ -665,10 +699,6 @@ function formatDate(value: string) {
 }
 
 function formatAnswer(answer: AnswerValue) {
-  if (answer === "mid") {
-    return "Not really";
-  }
-
   return answer === "yes" ? "Yes" : "No";
 }
 const styles = StyleSheet.create({
@@ -930,6 +960,15 @@ const styles = StyleSheet.create({
   packCardPrimary: {
     backgroundColor: "#342724",
     borderColor: "#342724",
+  },
+  packCardHover: {
+    transform: [{ scale: 1.03 }],
+    borderColor: "rgba(221, 93, 67, 0.28)",
+    ...webHoverGlow,
+  },
+  packCardHoverPrimary: {
+    transform: [{ scale: 1.03 }],
+    ...webHoverGlowPrimary,
   },
   packCardDisabled: {
     opacity: 0.45,
@@ -1193,3 +1232,4 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 });
+

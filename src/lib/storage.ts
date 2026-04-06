@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import type { LatestAnswerHistory, SessionSnapshot } from "../types";
+import type { AnswerValue, LatestAnswerHistory, SessionSnapshot } from "../types";
 
 const STORAGE_PREFIX = "love-better/";
 const SESSION_STORAGE_KEY = `${STORAGE_PREFIX}session-v1`;
@@ -14,12 +14,14 @@ export async function loadStoredSession(): Promise<SessionSnapshot | null> {
       return null;
     }
 
-    const parsed = JSON.parse(rawValue) as Omit<SessionSnapshot, "packId"> & {
+    const parsed = JSON.parse(rawValue) as Omit<SessionSnapshot, "packId" | "answers"> & {
+      answers?: Record<string, unknown>;
       packId?: SessionSnapshot["packId"];
     };
 
     return {
       ...parsed,
+      answers: normalizeAnswerMap(parsed.answers),
       packId: parsed.packId ?? "standard",
     };
   } catch {
@@ -43,7 +45,34 @@ export async function loadLatestAnswerHistory(): Promise<LatestAnswerHistory> {
       return {};
     }
 
-    return JSON.parse(rawValue) as LatestAnswerHistory;
+    const parsed = JSON.parse(rawValue) as Record<string, {
+      answer?: unknown;
+      answeredAt?: unknown;
+      packId?: SessionSnapshot["packId"];
+      questionCategory?: unknown;
+      questionId?: unknown;
+    }>;
+
+    return Object.fromEntries(
+      Object.entries(parsed).flatMap(([questionId, record]) => {
+        const answer = normalizeAnswerValue(record?.answer);
+
+        if (!answer || typeof record?.answeredAt !== "string" || typeof record?.questionCategory !== "string") {
+          return [];
+        }
+
+        return [[
+          questionId,
+          {
+            questionId: typeof record.questionId === "string" ? record.questionId : questionId,
+            answer,
+            answeredAt: record.answeredAt,
+            packId: record.packId ?? "standard",
+            questionCategory: record.questionCategory as LatestAnswerHistory[string]["questionCategory"],
+          },
+        ]];
+      }),
+    );
   } catch {
     return {};
   }
@@ -62,4 +91,30 @@ export async function clearAllAppStorage(): Promise<void> {
   }
 
   await AsyncStorage.multiRemove(appKeys);
+}
+
+function normalizeAnswerMap(answers?: Record<string, unknown>): Record<string, AnswerValue> {
+  if (!answers) {
+    return {};
+  }
+
+  return Object.fromEntries(
+    Object.entries(answers).flatMap(([questionId, answer]) => {
+      const normalizedAnswer = normalizeAnswerValue(answer);
+
+      return normalizedAnswer ? [[questionId, normalizedAnswer]] : [];
+    }),
+  );
+}
+
+function normalizeAnswerValue(answer: unknown): AnswerValue | null {
+  if (answer === "yes" || answer === "no") {
+    return answer;
+  }
+
+  if (answer === "mid") {
+    return "no";
+  }
+
+  return null;
 }
