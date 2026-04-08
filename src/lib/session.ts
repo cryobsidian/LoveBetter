@@ -1,6 +1,7 @@
-import { getQuestionsForPack, questionBankById } from "../data/questionBank";
+import { getQuestionsForPack, questionBank, questionBankById, questionCategories } from "../data/questionBank";
 import type {
   AnswerValue,
+  CategoryKnowledgeTracker,
   ExploreItem,
   LatestAnswerHistory,
   PackId,
@@ -131,9 +132,32 @@ export function mergeLatestAnswerHistory(
   return nextHistory;
 }
 
-export function getSortedLatestAnswerRecords(history: LatestAnswerHistory): SavedAnswerRecord[] {
-  return Object.values(history).sort((left, right) => {
-    return new Date(right.answeredAt).getTime() - new Date(left.answeredAt).getTime();
+export function getCategoryKnowledgeTracker(
+  history: LatestAnswerHistory,
+): CategoryKnowledgeTracker[] {
+  const totalCounts = questionBank.reduce<Record<string, number>>((counts, question) => {
+    counts[question.category] = (counts[question.category] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  const yesCounts = Object.values(history).reduce<Record<string, number>>((counts, record) => {
+    if (record.answer === "yes") {
+      counts[record.questionCategory] = (counts[record.questionCategory] ?? 0) + 1;
+    }
+
+    return counts;
+  }, {});
+
+  return questionCategories.map((category) => {
+    const totalCount = totalCounts[category] ?? 0;
+    const yesCount = yesCounts[category] ?? 0;
+
+    return {
+      category,
+      yesCount,
+      totalCount,
+      percentage: totalCount === 0 ? 0 : Math.round((yesCount / totalCount) * 100),
+    };
   });
 }
 

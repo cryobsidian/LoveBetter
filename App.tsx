@@ -16,7 +16,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import {
   getPackDescription,
   getPackLabel,
-  questionBankById,
   questionPacks,
 } from "./src/data/questionBank";
 import {
@@ -25,8 +24,8 @@ import {
   answerQuestion,
   buildLatestAnswerRecords,
   createSession,
+  getCategoryKnowledgeTracker,
   getExploreItems,
-  getSortedLatestAnswerRecords,
   mergeLatestAnswerHistory,
   resolveSessionQuestions,
   summarizeAnswers,
@@ -41,20 +40,15 @@ import {
 } from "./src/lib/storage";
 import type {
   AnswerValue,
+  CategoryKnowledgeTracker,
   LatestAnswerHistory,
   PackId,
   Question,
   QuestionPack,
-  SavedAnswerRecord,
   SessionSnapshot,
 } from "./src/types";
 
 type Screen = "home" | "intro" | "question" | "summary" | "dashboard";
-
-type DashboardItem = {
-  record: SavedAnswerRecord;
-  question: Question;
-};
 
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
@@ -109,18 +103,8 @@ export default function App() {
     return session ? resolveSessionQuestions(session) : [];
   }, [session]);
 
-  const dashboardItems = useMemo<DashboardItem[]>(() => {
-    return getSortedLatestAnswerRecords(latestAnswerHistory)
-      .map((record) => {
-        const question = questionBankById.get(record.questionId);
-
-        if (!question) {
-          return null;
-        }
-
-        return { record, question };
-      })
-      .filter((item): item is DashboardItem => Boolean(item));
+  const dashboardTracker = useMemo<CategoryKnowledgeTracker[]>(() => {
+    return getCategoryKnowledgeTracker(latestAnswerHistory);
   }, [latestAnswerHistory]);
 
   const currentQuestion = session
@@ -309,7 +293,7 @@ export default function App() {
 
           {screen === "dashboard" ? (
             <DashboardScreen
-              items={dashboardItems}
+              trackerRows={dashboardTracker}
               isConfirmingClearData={isConfirmingClearData}
               onBack={navigateHome}
               onCancelClearData={() => setIsConfirmingClearData(false)}
@@ -580,7 +564,7 @@ function SummaryScreen(props: {
 }
 
 function DashboardScreen(props: {
-  items: DashboardItem[];
+  trackerRows: CategoryKnowledgeTracker[];
   isConfirmingClearData: boolean;
   onBack: () => void;
   onCancelClearData: () => void;
@@ -590,9 +574,9 @@ function DashboardScreen(props: {
   return (
     <View style={styles.screen}>
       <Text style={styles.eyebrow}>Dashboard</Text>
-      <Text style={styles.sectionTitle}>Your latest completed answers, saved per question.</Text>
+      <Text style={styles.sectionTitle}>How much you know your partner, by category.</Text>
       <Text style={styles.sectionBody}>
-        If you answer the same question again in a later session, this dashboard keeps only the newest result.
+        Each percentage reflects your latest saved Yes answers against the full question bank in that category.
       </Text>
 
       <View style={styles.rowActions}>
@@ -602,26 +586,24 @@ function DashboardScreen(props: {
       </View>
 
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Saved answers</Text>
-        {props.items.length === 0 ? (
-          <Text style={styles.emptyState}>
-            No completed answers saved yet. Finish a session and your latest answers will appear here.
-          </Text>
-        ) : (
-          props.items.map((item) => (
-            <View key={item.question.id} style={styles.dashboardRow}>
-              <View style={styles.dashboardHeader}>
-                <Text style={styles.dashboardCategory}>{item.record.questionCategory}</Text>
-                <Text style={styles.dashboardDate}>{formatDate(item.record.answeredAt)}</Text>
-              </View>
-              <Text style={styles.dashboardQuestion}>{item.question.text}</Text>
-              <View style={styles.dashboardMetaRow}>
-                <Text style={styles.dashboardAnswer}>{formatAnswer(item.record.answer)}</Text>
-                <Text style={styles.dashboardPack}>{getPackLabel(item.record.packId)}</Text>
-              </View>
+        <Text style={styles.cardTitle}>Knowledge tracker</Text>
+        {props.trackerRows.map((item) => (
+          <View key={item.category} style={styles.trackerRow}>
+            <View style={styles.trackerHeader}>
+              <Text style={styles.trackerCategory}>{item.category}</Text>
+              <Text style={styles.trackerPercentage}>{item.percentage}%</Text>
             </View>
-          ))
-        )}
+            <View style={styles.trackerTrack}>
+              <View
+                style={[
+                  styles.trackerFill,
+                  { width: `${item.percentage}%` },
+                ]}
+              />
+            </View>
+            <Text style={styles.trackerMeta}>{`${item.yesCount} / ${item.totalCount} known`}</Text>
+          </View>
+        ))}
       </View>
 
       <View style={styles.cardDanger}>
@@ -1166,61 +1148,48 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 24,
   },
-  dashboardRow: {
+  trackerRow: {
     borderTopWidth: 1,
     borderTopColor: theme.line,
     paddingTop: 16,
-    gap: 8,
+    gap: 10,
   },
-  dashboardHeader: {
+  trackerHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     gap: 12,
   },
-  dashboardCategory: {
-    color: theme.coral,
-    fontSize: 13,
+  trackerCategory: {
+    color: theme.ink,
+    fontSize: 16,
+    lineHeight: 22,
     fontWeight: "800",
-    textTransform: "uppercase",
-    letterSpacing: 1,
+    flexShrink: 1,
   },
-  dashboardDate: {
-    color: theme.mutedInk,
+  trackerPercentage: {
+    color: theme.coral,
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  trackerTrack: {
+    height: 14,
+    borderRadius: 999,
+    backgroundColor: "rgba(255, 245, 236, 0.92)",
+    overflow: "hidden",
+    borderWidth: 1,
+    borderColor: theme.line,
+  },
+  trackerFill: {
+    height: "100%",
+    minWidth: 0,
+    borderRadius: 999,
+    backgroundColor: theme.coral,
+  },
+  trackerMeta: {
+    color: theme.mintDeep,
     fontSize: 13,
     fontWeight: "700",
-  },
-  dashboardQuestion: {
-    color: theme.ink,
-    fontSize: 17,
-    lineHeight: 25,
-    fontWeight: "800",
-  },
-  dashboardMetaRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    gap: 10,
-  },
-  dashboardAnswer: {
-    color: "#fff7f1",
-    backgroundColor: theme.ink,
-    borderRadius: 999,
-    overflow: "hidden",
-    paddingHorizontal: 12,
-    paddingVertical: 7,
-    fontSize: 13,
-    fontWeight: "800",
-  },
-  dashboardPack: {
-    color: theme.mintDeep,
-    backgroundColor: "rgba(183, 219, 201, 0.38)",
-    borderRadius: 999,
-    overflow: "hidden",
-    paddingHorizontal: 12,
-    paddingVertical: 7,
-    fontSize: 13,
-    fontWeight: "800",
   },
   confirmationStack: {
     gap: 12,

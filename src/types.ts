@@ -54,6 +54,13 @@ export type SavedAnswerRecord = {
 
 export type LatestAnswerHistory = Record<string, SavedAnswerRecord>;
 
+export type CategoryKnowledgeTracker = {
+  category: QuestionCategory;
+  yesCount: number;
+  totalCount: number;
+  percentage: number;
+};
+
 export type ExploreItem = {
   question: Question;
   answer: "no";
