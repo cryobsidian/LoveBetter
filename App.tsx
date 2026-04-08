@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
+  Modal,
   Platform,
   Pressable,
   SafeAreaView,
@@ -22,10 +23,13 @@ import {
   QUESTIONS_PER_SESSION,
   advanceSession,
   answerQuestion,
+  buildHistoricalNoRecords,
   buildLatestAnswerRecords,
   createSession,
   getCategoryKnowledgeTracker,
+  getDashboardNoCardItems,
   getExploreItems,
+  mergeHistoricalNoHistory,
   mergeLatestAnswerHistory,
   resolveSessionQuestions,
   summarizeAnswers,
@@ -33,14 +37,18 @@ import {
 import {
   clearAllAppStorage,
   clearStoredSession,
+  loadHistoricalNoHistory,
   loadLatestAnswerHistory,
   loadStoredSession,
+  saveHistoricalNoHistory,
   saveLatestAnswerHistory,
   saveStoredSession,
 } from "./src/lib/storage";
 import type {
   AnswerValue,
   CategoryKnowledgeTracker,
+  DashboardNoCardItem,
+  HistoricalNoHistory,
   LatestAnswerHistory,
   PackId,
   Question,
@@ -91,9 +99,11 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>("home");
   const [session, setSession] = useState<SessionSnapshot | null>(null);
   const [latestAnswerHistory, setLatestAnswerHistory] = useState<LatestAnswerHistory>({});
+  const [historicalNoHistory, setHistoricalNoHistory] = useState<HistoricalNoHistory>({});
   const [selectedPackId, setSelectedPackId] = useState<PackId | null>(null);
   const [isHydrating, setIsHydrating] = useState(true);
   const [isConfirmingClearData, setIsConfirmingClearData] = useState(false);
+  const [selectedNoCardId, setSelectedNoCardId] = useState<string | null>(null);
 
   useEffect(() => {
     void hydrateAppState();
@@ -107,6 +117,18 @@ export default function App() {
     return getCategoryKnowledgeTracker(latestAnswerHistory);
   }, [latestAnswerHistory]);
 
+  const dashboardNoCards = useMemo<DashboardNoCardItem[]>(() => {
+    return getDashboardNoCardItems(historicalNoHistory);
+  }, [historicalNoHistory]);
+
+  const selectedNoCard = useMemo<DashboardNoCardItem | null>(() => {
+    if (!selectedNoCardId) {
+      return null;
+    }
+
+    return dashboardNoCards.find((item) => item.question.id === selectedNoCardId) ?? null;
+  }, [dashboardNoCards, selectedNoCardId]);
+
   const currentQuestion = session
     ? sessionQuestions[session.currentIndex] ?? sessionQuestions[0]
     : null;
@@ -118,12 +140,14 @@ export default function App() {
   const selectedPack = selectedPackId ? questionPacks.find((pack) => pack.id === selectedPackId) ?? null : null;
 
   async function hydrateAppState() {
-    const [storedSession, storedLatestAnswers] = await Promise.all([
+    const [storedSession, storedLatestAnswers, storedHistoricalNo] = await Promise.all([
       loadStoredSession(),
       loadLatestAnswerHistory(),
+      loadHistoricalNoHistory(),
     ]);
 
     setLatestAnswerHistory(storedLatestAnswers);
+    setHistoricalNoHistory(storedHistoricalNo);
 
     if (!storedSession) {
       setIsHydrating(false);
@@ -177,12 +201,18 @@ export default function App() {
         latestAnswerHistory,
         buildLatestAnswerRecords(nextSession),
       );
+      const nextHistoricalNoHistory = mergeHistoricalNoHistory(
+        historicalNoHistory,
+        buildHistoricalNoRecords(nextSession),
+      );
 
       setLatestAnswerHistory(nextHistory);
+      setHistoricalNoHistory(nextHistoricalNoHistory);
       setScreen("summary");
       await Promise.all([
         saveStoredSession(nextSession),
         saveLatestAnswerHistory(nextHistory),
+        saveHistoricalNoHistory(nextHistoricalNoHistory),
       ]);
       return;
     }
@@ -194,6 +224,7 @@ export default function App() {
     const nextPackId = session?.packId ?? selectedPackId ?? "standard";
 
     setSession(null);
+    setSelectedNoCardId(null);
     setSelectedPackId(nextPackId);
     setScreen("intro");
     await clearStoredSession();
@@ -202,6 +233,7 @@ export default function App() {
   async function handleResetToHome() {
     setSession(null);
     setSelectedPackId(null);
+    setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
     setScreen("home");
     await clearStoredSession();
@@ -209,6 +241,7 @@ export default function App() {
 
   function openDashboard() {
     setIsConfirmingClearData(false);
+    setSelectedNoCardId(null);
     setScreen("dashboard");
   }
 
@@ -222,6 +255,8 @@ export default function App() {
     setSession(null);
     setSelectedPackId(null);
     setLatestAnswerHistory({});
+    setHistoricalNoHistory({});
+    setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
     setScreen("home");
     await clearAllAppStorage();
@@ -294,10 +329,14 @@ export default function App() {
           {screen === "dashboard" ? (
             <DashboardScreen
               trackerRows={dashboardTracker}
+              noCardItems={dashboardNoCards}
+              selectedNoCard={selectedNoCard}
               isConfirmingClearData={isConfirmingClearData}
               onBack={navigateHome}
               onCancelClearData={() => setIsConfirmingClearData(false)}
               onConfirmClearData={handleConfirmClearData}
+              onOpenNoCard={(questionId) => setSelectedNoCardId(questionId)}
+              onCloseNoCard={() => setSelectedNoCardId(null)}
               onRequestClearData={() => setIsConfirmingClearData(true)}
             />
           ) : null}
@@ -565,10 +604,14 @@ function SummaryScreen(props: {
 
 function DashboardScreen(props: {
   trackerRows: CategoryKnowledgeTracker[];
+  noCardItems: DashboardNoCardItem[];
+  selectedNoCard: DashboardNoCardItem | null;
   isConfirmingClearData: boolean;
   onBack: () => void;
   onCancelClearData: () => void;
   onConfirmClearData: () => void;
+  onOpenNoCard: (questionId: string) => void;
+  onCloseNoCard: () => void;
   onRequestClearData: () => void;
 }) {
   return (
@@ -606,6 +649,30 @@ function DashboardScreen(props: {
         ))}
       </View>
 
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Things to explore</Text>
+        <Text style={styles.cardBody}>
+          These are questions you answered No before. Tap any card to open a tip for how you can learn the answer more naturally.
+        </Text>
+        {props.noCardItems.length === 0 ? (
+          <Text style={styles.emptyState}>
+            No historical No answers saved yet. Finish a session with a few open questions and they will appear here.
+          </Text>
+        ) : (
+          <View style={styles.noCardGrid}>
+            {props.noCardItems.map((item) => (
+              <Pressable
+                key={item.question.id}
+                style={styles.noCardButton}
+                onPress={() => props.onOpenNoCard(item.question.id)}
+              >
+                <Text style={styles.noCardQuestion}>{item.question.text}</Text>
+              </Pressable>
+            ))}
+          </View>
+        )}
+      </View>
+
       <View style={styles.cardDanger}>
         <Text style={styles.cardTitle}>Clear data</Text>
         <Text style={styles.cardBody}>
@@ -632,6 +699,27 @@ function DashboardScreen(props: {
           </Pressable>
         )}
       </View>
+
+      <Modal
+        animationType="fade"
+        transparent
+        visible={Boolean(props.selectedNoCard)}
+        onRequestClose={props.onCloseNoCard}
+      >
+        <View style={styles.modalRoot}>
+          <Pressable style={styles.modalBackdrop} onPress={props.onCloseNoCard} />
+          {props.selectedNoCard ? (
+            <View style={styles.modalCard}>
+              <Text style={styles.eyebrow}>Tip</Text>
+              <Text style={styles.modalQuestion}>{props.selectedNoCard.question.text}</Text>
+              <Text style={styles.modalFeedback}>{props.selectedNoCard.question.feedbackNo}</Text>
+              <Pressable style={styles.primaryButtonCompact} onPress={props.onCloseNoCard}>
+                <Text style={styles.primaryButtonText}>Close</Text>
+              </Pressable>
+            </View>
+          ) : null}
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -1190,6 +1278,64 @@ const styles = StyleSheet.create({
     color: theme.mintDeep,
     fontSize: 13,
     fontWeight: "700",
+  },
+  noCardGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 12,
+  },
+  noCardButton: {
+    flexBasis: 220,
+    flexGrow: 1,
+    minHeight: 112,
+    borderRadius: 24,
+    borderWidth: 1,
+    borderColor: theme.line,
+    backgroundColor: "rgba(255, 253, 249, 0.94)",
+    padding: 18,
+    justifyContent: "center",
+    ...webShadow,
+  },
+  noCardQuestion: {
+    color: theme.ink,
+    fontSize: 16,
+    lineHeight: 23,
+    fontWeight: "800",
+  },
+  modalRoot: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+    paddingVertical: 28,
+  },
+  modalBackdrop: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(49, 35, 31, 0.38)",
+  },
+  modalCard: {
+    width: "100%",
+    maxWidth: 620,
+    borderRadius: 30,
+    backgroundColor: "rgba(255, 250, 243, 0.98)",
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 24,
+    gap: 16,
+    zIndex: 1,
+    ...webShadow,
+  },
+  modalQuestion: {
+    color: theme.ink,
+    fontSize: 26,
+    lineHeight: 34,
+    fontWeight: "900",
+    letterSpacing: -0.4,
+  },
+  modalFeedback: {
+    color: theme.mutedInk,
+    fontSize: 16,
+    lineHeight: 26,
   },
   confirmationStack: {
     gap: 12,

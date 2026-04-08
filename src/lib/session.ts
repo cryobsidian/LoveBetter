@@ -2,7 +2,10 @@ import { getQuestionsForPack, questionBank, questionBankById, questionCategories
 import type {
   AnswerValue,
   CategoryKnowledgeTracker,
+  DashboardNoCardItem,
   ExploreItem,
+  HistoricalNoHistory,
+  HistoricalNoRecord,
   LatestAnswerHistory,
   PackId,
   Question,
@@ -119,10 +122,34 @@ export function buildLatestAnswerRecords(session: SessionSnapshot): SavedAnswerR
     .filter((record): record is SavedAnswerRecord => Boolean(record));
 }
 
+export function buildHistoricalNoRecords(session: SessionSnapshot): HistoricalNoRecord[] {
+  const answeredAt = session.completedAt ?? new Date().toISOString();
+
+  return Object.entries(session.answers)
+    .filter((entry): entry is [string, "no"] => entry[1] === "no")
+    .map(([questionId]) => ({
+      questionId,
+      answeredAt,
+    }));
+}
+
 export function mergeLatestAnswerHistory(
   existingHistory: LatestAnswerHistory,
   nextRecords: SavedAnswerRecord[],
 ): LatestAnswerHistory {
+  const nextHistory = { ...existingHistory };
+
+  nextRecords.forEach((record) => {
+    nextHistory[record.questionId] = record;
+  });
+
+  return nextHistory;
+}
+
+export function mergeHistoricalNoHistory(
+  existingHistory: HistoricalNoHistory,
+  nextRecords: HistoricalNoRecord[],
+): HistoricalNoHistory {
   const nextHistory = { ...existingHistory };
 
   nextRecords.forEach((record) => {
@@ -159,6 +186,28 @@ export function getCategoryKnowledgeTracker(
       percentage: totalCount === 0 ? 0 : Math.round((yesCount / totalCount) * 100),
     };
   });
+}
+
+export function getDashboardNoCardItems(
+  history: HistoricalNoHistory,
+): DashboardNoCardItem[] {
+  return Object.values(history)
+    .map((record) => {
+      const question = questionBankById.get(record.questionId);
+
+      if (!question) {
+        return null;
+      }
+
+      return {
+        question,
+        answeredAt: record.answeredAt,
+      };
+    })
+    .filter((item): item is DashboardNoCardItem => Boolean(item))
+    .sort((left, right) => {
+      return new Date(right.answeredAt).getTime() - new Date(left.answeredAt).getTime();
+    });
 }
 
 function shuffle<T>(items: T[]): T[] {

@@ -1,11 +1,17 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { normalizeQuestionId } from "../data/questionBank";
-import type { AnswerValue, LatestAnswerHistory, SessionSnapshot } from "../types";
+import type {
+  AnswerValue,
+  HistoricalNoHistory,
+  LatestAnswerHistory,
+  SessionSnapshot,
+} from "../types";
 
 const STORAGE_PREFIX = "love-better/";
 const SESSION_STORAGE_KEY = `${STORAGE_PREFIX}session-v1`;
 const LATEST_ANSWERS_STORAGE_KEY = `${STORAGE_PREFIX}latest-answers-v1`;
+const HISTORICAL_NO_STORAGE_KEY = `${STORAGE_PREFIX}historical-no-v1`;
 
 export async function loadStoredSession(): Promise<SessionSnapshot | null> {
   try {
@@ -87,6 +93,48 @@ export async function loadLatestAnswerHistory(): Promise<LatestAnswerHistory> {
 
 export async function saveLatestAnswerHistory(history: LatestAnswerHistory): Promise<void> {
   await AsyncStorage.setItem(LATEST_ANSWERS_STORAGE_KEY, JSON.stringify(history));
+}
+
+export async function loadHistoricalNoHistory(): Promise<HistoricalNoHistory> {
+  try {
+    const rawValue = await AsyncStorage.getItem(HISTORICAL_NO_STORAGE_KEY);
+
+    if (!rawValue) {
+      return {};
+    }
+
+    const parsed = JSON.parse(rawValue) as Record<string, {
+      answeredAt?: unknown;
+      questionId?: unknown;
+    }>;
+
+    return Object.fromEntries(
+      Object.entries(parsed).flatMap(([questionId, record]) => {
+        const normalizedQuestionId = normalizeQuestionId(questionId);
+
+        if (typeof record?.answeredAt !== "string") {
+          return [];
+        }
+
+        return [[
+          normalizedQuestionId,
+          {
+            questionId:
+              typeof record.questionId === "string"
+                ? normalizeQuestionId(record.questionId)
+                : normalizedQuestionId,
+            answeredAt: record.answeredAt,
+          },
+        ]];
+      }),
+    );
+  } catch {
+    return {};
+  }
+}
+
+export async function saveHistoricalNoHistory(history: HistoricalNoHistory): Promise<void> {
+  await AsyncStorage.setItem(HISTORICAL_NO_STORAGE_KEY, JSON.stringify(history));
 }
 
 export async function clearAllAppStorage(): Promise<void> {
