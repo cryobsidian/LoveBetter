@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
+import Svg, { Circle } from "react-native-svg";
 
 import {
   getPackDescription,
@@ -56,7 +57,7 @@ import type {
   SessionSnapshot,
 } from "./src/types";
 
-type Screen = "home" | "intro" | "question" | "summary" | "dashboard";
+type Screen = "landing" | "home" | "intro" | "question" | "summary" | "dashboard";
 
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
@@ -96,7 +97,7 @@ const webHoverGlowPrimary =
     : {};
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>("home");
+  const [screen, setScreen] = useState<Screen>("landing");
   const [session, setSession] = useState<SessionSnapshot | null>(null);
   const [latestAnswerHistory, setLatestAnswerHistory] = useState<LatestAnswerHistory>({});
   const [historicalNoHistory, setHistoricalNoHistory] = useState<HistoricalNoHistory>({});
@@ -156,8 +157,13 @@ export default function App() {
 
     setSession(storedSession);
     setSelectedPackId(storedSession.packId);
-    setScreen(storedSession.sessionState === "COMPLETED" ? "summary" : "question");
     setIsHydrating(false);
+  }
+
+  function enterApp() {
+    setIsConfirmingClearData(false);
+    setSelectedNoCardId(null);
+    setScreen("home");
   }
 
   function beginPackIntro(packId: PackId) {
@@ -282,6 +288,8 @@ export default function App() {
       <SafeAreaView style={styles.safeArea}>
         <DecorativeBackdrop />
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+          {screen === "landing" ? <LandingScreen onEnterApp={enterApp} /> : null}
+
           {screen === "home" ? (
             <HomeScreen
               hasInProgressSession={session?.sessionState === "IN_PROGRESS"}
@@ -345,6 +353,93 @@ export default function App() {
     </LinearGradient>
   );
 }
+
+function LandingScreen(props: { onEnterApp: () => void }) {
+  const previewPacks = questionPacks.filter((pack) => pack.id !== "standard").slice(0, 4);
+
+  return (
+    <View style={styles.screen}>
+      <View style={styles.landingHero}>
+        <View style={styles.heroTag}>
+          <Text style={styles.heroTagText}>Love Better</Text>
+        </View>
+
+        <Text style={styles.landingDisplayTitle}>Enter a calmer way to notice how well you know your partner.</Text>
+        <Text style={styles.heroBody}>
+          A short reflective self-check for relationships. No grading, no pressure, just a gentler way to surface what already feels clear and what deserves more curiosity.
+        </Text>
+
+        <View style={styles.rowActions}>
+          <Pressable style={styles.primaryButton} onPress={props.onEnterApp}>
+            <Text style={styles.primaryButtonText}>Enter the self-check</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={styles.landingValueStrip}>
+        <MetricCard value={`${QUESTIONS_PER_SESSION}`} label="prompts" />
+        <MetricCard value="No" label="grading" />
+        <MetricCard value="Private" label="storage" />
+      </View>
+
+      <View style={styles.landingSectionCard}>
+        <Text style={styles.eyebrow}>How it flows</Text>
+        <Text style={styles.sectionTitle}>A reflective rhythm built to feel light, not performative.</Text>
+        <View style={styles.flowGrid}>
+          <FlowStepCard
+            step="01"
+            title="Enter"
+            body="Start from a calm entry point and choose the kind of self-check you want to move through."
+          />
+          <FlowStepCard
+            step="02"
+            title="Reflect"
+            body="Move through a short set of prompts that reveal what feels known, assumed, or still fuzzy."
+          />
+          <FlowStepCard
+            step="03"
+            title="Explore"
+            body="Leave with a few openings for softer conversations, closer observation, or more intentional time."
+          />
+        </View>
+      </View>
+
+      <View style={styles.landingSectionCard}>
+        <Text style={styles.eyebrow}>Pack preview</Text>
+        <Text style={styles.sectionTitle}>Mix the full question bank or drift into one dimension at a time.</Text>
+        <Text style={styles.sectionBody}>
+          The app home lets you choose a broad self-check or focus on a specific area like habits, travel, lifestyle, or relationship awareness.
+        </Text>
+
+        <View style={styles.previewGrid}>
+          <View style={[styles.previewPackCard, styles.previewPackCardPrimary]}>
+            <Text style={styles.previewPackKicker}>Recommended start</Text>
+            <Text style={styles.previewPackTitlePrimary}>Standard</Text>
+            <Text style={styles.previewPackBodyPrimary}>
+              A mixed self-check across the full question bank for a wider, softer snapshot.
+            </Text>
+          </View>
+
+          {previewPacks.map((pack) => (
+            <PackPreviewCard key={pack.id} title={pack.label} description={pack.description} />
+          ))}
+        </View>
+      </View>
+
+      <View style={styles.landingClosingCard}>
+        <Text style={styles.eyebrow}>Ready when you are</Text>
+        <Text style={styles.sectionTitle}>Step into the app, choose a mode, and start noticing what opens up.</Text>
+        <Text style={styles.sectionBody}>
+          Your saved progress and dashboard stay inside the app flow. This page is just the threshold.
+        </Text>
+        <Pressable style={styles.primaryButton} onPress={props.onEnterApp}>
+          <Text style={styles.primaryButtonText}>Choose your self-check</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
 function HomeScreen(props: {
   hasInProgressSession: boolean;
   activePackLabel?: string;
@@ -357,19 +452,10 @@ function HomeScreen(props: {
   return (
     <View style={styles.screen}>
       <View style={styles.heroTag}>
-        <Text style={styles.heroTagText}>Love Better v1.01</Text>
+        <Text style={styles.heroTagText}>Inside Love Better</Text>
       </View>
 
-      <Text style={styles.displayTitle}>Choose a self-check mode and start exploring what you know.</Text>
-      <Text style={styles.heroBody}>
-        Play a mixed round or focus on one pack at a time. Everything stays local to this device, and your latest completed answers appear in the dashboard.
-      </Text>
-
-      <View style={styles.heroStats}>
-        <MetricCard value={`${QUESTIONS_PER_SESSION}`} label="prompts" />
-        <MetricCard value="10" label="category packs" />
-        <MetricCard value="local" label="storage" />
-      </View>
+      <Text style={styles.displayTitle}>Choose your next self-check and move at your own pace.</Text>
 
       <View style={styles.rowActions}>
         {props.hasInProgressSession ? (
@@ -407,9 +493,28 @@ function HomeScreen(props: {
 
       <Text style={styles.supportText}>
         {props.lastCompletedAt
-          ? `Last completed session saved ${formatDate(props.lastCompletedAt)}.`
+          ? `Last completed session saved ${formatDate(props.lastCompletedAt)}. Pick a new mode whenever you want another snapshot.`
           : "Pick any mode to begin a new self-check."}
       </Text>
+    </View>
+  );
+}
+
+function FlowStepCard(props: { step: string; title: string; body: string }) {
+  return (
+    <View style={styles.flowCard}>
+      <Text style={styles.flowStep}>{props.step}</Text>
+      <Text style={styles.flowTitle}>{props.title}</Text>
+      <Text style={styles.flowBody}>{props.body}</Text>
+    </View>
+  );
+}
+
+function PackPreviewCard(props: { title: string; description: string }) {
+  return (
+    <View style={styles.previewPackCard}>
+      <Text style={styles.previewPackTitle}>{props.title}</Text>
+      <Text style={styles.previewPackBody}>{props.description}</Text>
     </View>
   );
 }
@@ -630,23 +735,15 @@ function DashboardScreen(props: {
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Knowledge tracker</Text>
-        {props.trackerRows.map((item) => (
-          <View key={item.category} style={styles.trackerRow}>
-            <View style={styles.trackerHeader}>
-              <Text style={styles.trackerCategory}>{item.category}</Text>
-              <Text style={styles.trackerPercentage}>{item.percentage}%</Text>
-            </View>
-            <View style={styles.trackerTrack}>
-              <View
-                style={[
-                  styles.trackerFill,
-                  { width: `${item.percentage}%` },
-                ]}
-              />
-            </View>
-            <Text style={styles.trackerMeta}>{`${item.yesCount} / ${item.totalCount} known`}</Text>
-          </View>
-        ))}
+        <View style={styles.trackerGrid}>
+          {props.trackerRows.map((item) => (
+            <KnowledgeDial
+              key={item.category}
+              category={item.category}
+              percentage={item.percentage}
+            />
+          ))}
+        </View>
       </View>
 
       <View style={styles.card}>
@@ -740,6 +837,50 @@ function MetricCard(props: { value: string; label: string }) {
     <View style={styles.metricCard}>
       <Text style={styles.metricValue}>{props.value}</Text>
       <Text style={styles.metricLabel}>{props.label}</Text>
+    </View>
+  );
+}
+
+function KnowledgeDial(props: { category: string; percentage: number }) {
+  const size = 112;
+  const strokeWidth = 10;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const clampedPercentage = Math.max(0, Math.min(100, props.percentage));
+  const dashOffset = circumference * (1 - clampedPercentage / 100);
+
+  return (
+    <View style={styles.trackerDialCard}>
+      <View style={styles.trackerDialShell}>
+        <Svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          <Circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke="rgba(49, 35, 31, 0.08)"
+            strokeWidth={strokeWidth}
+          />
+          <Circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke={theme.coral}
+            strokeWidth={strokeWidth}
+            strokeLinecap="round"
+            strokeDasharray={`${circumference} ${circumference}`}
+            strokeDashoffset={dashOffset}
+            originX={size / 2}
+            originY={size / 2}
+            rotation={-90}
+          />
+        </Svg>
+        <View pointerEvents="none" style={styles.trackerDialCenter}>
+          <Text style={styles.trackerDialPercentage}>{clampedPercentage}%</Text>
+        </View>
+      </View>
+      <Text style={styles.trackerDialCategory}>{props.category}</Text>
     </View>
   );
 }
@@ -862,11 +1003,133 @@ const styles = StyleSheet.create({
     letterSpacing: -1.2,
     maxWidth: 720,
   },
+  landingHero: {
+    gap: 22,
+    padding: 28,
+    borderRadius: 40,
+    backgroundColor: "rgba(255, 250, 243, 0.58)",
+    borderWidth: 1,
+    borderColor: "rgba(49, 35, 31, 0.08)",
+    ...webShadow,
+  },
+  landingDisplayTitle: {
+    color: theme.ink,
+    fontSize: 56,
+    lineHeight: 62,
+    fontWeight: "900",
+    letterSpacing: -1.8,
+    maxWidth: 760,
+  },
   heroBody: {
     color: theme.mutedInk,
     fontSize: 18,
     lineHeight: 28,
     maxWidth: 700,
+  },
+  landingValueStrip: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 12,
+  },
+  landingSectionCard: {
+    backgroundColor: "rgba(255, 250, 243, 0.78)",
+    borderRadius: 34,
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 24,
+    gap: 18,
+    ...webShadow,
+  },
+  flowGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  flowCard: {
+    flexBasis: 220,
+    flexGrow: 1,
+    minHeight: 182,
+    borderRadius: 28,
+    backgroundColor: "rgba(255, 253, 249, 0.92)",
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 20,
+    gap: 10,
+  },
+  flowStep: {
+    color: theme.coral,
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 1.2,
+  },
+  flowTitle: {
+    color: theme.ink,
+    fontSize: 24,
+    lineHeight: 30,
+    fontWeight: "900",
+  },
+  flowBody: {
+    color: theme.mutedInk,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  previewGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  previewPackCard: {
+    flexBasis: 210,
+    flexGrow: 1,
+    minHeight: 156,
+    borderRadius: 28,
+    borderWidth: 1,
+    borderColor: theme.line,
+    backgroundColor: "rgba(255, 253, 249, 0.94)",
+    padding: 20,
+    gap: 10,
+  },
+  previewPackCardPrimary: {
+    backgroundColor: "#342724",
+    borderColor: "#342724",
+  },
+  previewPackKicker: {
+    color: "#f6d8cc",
+    fontSize: 11,
+    fontWeight: "800",
+    textTransform: "uppercase",
+    letterSpacing: 1.2,
+  },
+  previewPackTitle: {
+    color: theme.ink,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  previewPackTitlePrimary: {
+    color: "#fff7f1",
+    fontSize: 26,
+    lineHeight: 32,
+    fontWeight: "900",
+  },
+  previewPackBody: {
+    color: theme.mutedInk,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  previewPackBodyPrimary: {
+    color: "#f6d8cc",
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  landingClosingCard: {
+    backgroundColor: "rgba(255, 250, 243, 0.82)",
+    borderRadius: 38,
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 28,
+    gap: 18,
+    ...webShadow,
   },
   heroStats: {
     flexDirection: "row",
@@ -1236,48 +1499,51 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 24,
   },
-  trackerRow: {
-    borderTopWidth: 1,
-    borderTopColor: theme.line,
-    paddingTop: 16,
-    gap: 10,
-  },
-  trackerHeader: {
+  trackerGrid: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: 16,
+    justifyContent: "center",
+  },
+  trackerDialCard: {
+    flexBasis: 150,
+    flexGrow: 1,
+    maxWidth: 170,
+    minWidth: 136,
     alignItems: "center",
     gap: 12,
-  },
-  trackerCategory: {
-    color: theme.ink,
-    fontSize: 16,
-    lineHeight: 22,
-    fontWeight: "800",
-    flexShrink: 1,
-  },
-  trackerPercentage: {
-    color: theme.coral,
-    fontSize: 18,
-    fontWeight: "900",
-  },
-  trackerTrack: {
-    height: 14,
-    borderRadius: 999,
-    backgroundColor: "rgba(255, 245, 236, 0.92)",
-    overflow: "hidden",
+    paddingHorizontal: 10,
+    paddingVertical: 14,
+    borderRadius: 26,
+    backgroundColor: "rgba(255, 253, 249, 0.92)",
     borderWidth: 1,
     borderColor: theme.line,
   },
-  trackerFill: {
-    height: "100%",
-    minWidth: 0,
-    borderRadius: 999,
-    backgroundColor: theme.coral,
+  trackerDialShell: {
+    width: 112,
+    height: 112,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  trackerMeta: {
-    color: theme.mintDeep,
-    fontSize: 13,
-    fontWeight: "700",
+  trackerDialCenter: {
+    position: "absolute",
+    inset: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  trackerDialPercentage: {
+    color: theme.ink,
+    fontSize: 24,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+  },
+  trackerDialCategory: {
+    color: theme.ink,
+    fontSize: 15,
+    lineHeight: 21,
+    fontWeight: "800",
+    textAlign: "center",
+    minHeight: 42,
   },
   noCardGrid: {
     flexDirection: "row",
@@ -1347,4 +1613,5 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 });
+
 
