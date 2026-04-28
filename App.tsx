@@ -59,6 +59,9 @@ import type {
 
 type Screen = "landing" | "home" | "intro" | "question" | "summary" | "dashboard";
 
+const TALLY_POPUP_FORM_ID = "Np4yzO";
+const TALLY_WIDGET_SRC = "https://tally.so/widgets/embed.js";
+
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
   { value: "no", label: "No" },
@@ -105,6 +108,7 @@ export default function App() {
   const [isHydrating, setIsHydrating] = useState(true);
   const [isConfirmingClearData, setIsConfirmingClearData] = useState(false);
   const [selectedNoCardId, setSelectedNoCardId] = useState<string | null>(null);
+  const [shouldOpenTallyPopup, setShouldOpenTallyPopup] = useState(false);
 
   useEffect(() => {
     void hydrateAppState();
@@ -224,6 +228,7 @@ export default function App() {
 
       setLatestAnswerHistory(nextHistory);
       setHistoricalNoHistory(nextHistoricalNoHistory);
+      setShouldOpenTallyPopup(true);
       setScreen("summary");
       await Promise.all([
         saveStoredSession(nextSession),
@@ -242,6 +247,7 @@ export default function App() {
     setSession(null);
     setSelectedNoCardId(null);
     setSelectedPackId(nextPackId);
+    setShouldOpenTallyPopup(false);
     setScreen("intro");
     await clearStoredSession();
   }
@@ -251,6 +257,7 @@ export default function App() {
     setSelectedPackId(null);
     setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
+    setShouldOpenTallyPopup(false);
     setScreen("home");
     await clearStoredSession();
   }
@@ -274,6 +281,7 @@ export default function App() {
     setHistoricalNoHistory({});
     setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
+    setShouldOpenTallyPopup(false);
     setScreen("home");
     await clearAllAppStorage();
   }
@@ -343,6 +351,8 @@ export default function App() {
               answerSummary={answerSummary}
               completedAt={session.completedAt}
               exploreItems={exploreItems}
+              shouldOpenTallyPopup={shouldOpenTallyPopup}
+              onTallyPopupHandled={() => setShouldOpenTallyPopup(false)}
               onReplay={handleReplay}
               onStartFresh={handleResetToHome}
               packLabel={getPackLabel(session.packId)}
@@ -646,10 +656,30 @@ function SummaryScreen(props: {
   answerSummary: { yes: number; no: number };
   completedAt?: string;
   exploreItems: ReturnType<typeof getExploreItems>;
+  shouldOpenTallyPopup: boolean;
+  onTallyPopupHandled: () => void;
   onReplay: () => void;
   onStartFresh: () => void;
   packLabel: string;
 }) {
+  useEffect(() => {
+    if (!props.shouldOpenTallyPopup) {
+      return;
+    }
+
+    let isCancelled = false;
+
+    void openTallyPopup().finally(() => {
+      if (!isCancelled) {
+        props.onTallyPopupHandled();
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [props.onTallyPopupHandled, props.shouldOpenTallyPopup]);
+
   return (
     <View style={styles.screen}>
       <Text style={styles.eyebrow}>Session complete</Text>
@@ -888,6 +918,66 @@ function SummaryCard(props: { title: string; value: number; tone: "warm" | "soft
       <Text style={styles.summaryLabel}>{props.title}</Text>
     </View>
   );
+}
+
+async function openTallyPopup() {
+  if (Platform.OS !== "web") {
+    return;
+  }
+
+  const webWindow = globalThis as typeof globalThis & {
+    document?: Document;
+    Tally?: {
+      openPopup: (
+        formId: string,
+        options?: {
+          emoji?: {
+            text: string;
+            animation: "none" | "wave" | "tada" | "heart-beat" | "spin" | "flash" | "bounce" | "rubber-band" | "head-shake";
+          };
+        },
+      ) => void;
+    };
+  };
+
+  const documentRef = webWindow.document;
+
+  if (!documentRef) {
+    return;
+  }
+
+  if (!webWindow.Tally?.openPopup) {
+    await new Promise<void>((resolve) => {
+      const existingScript = documentRef.querySelector(`script[src="${TALLY_WIDGET_SRC}"]`) as HTMLScriptElement | null;
+
+      const finish = () => resolve();
+
+      if (existingScript) {
+        if (webWindow.Tally?.openPopup) {
+          resolve();
+          return;
+        }
+
+        existingScript.addEventListener("load", finish, { once: true });
+        existingScript.addEventListener("error", finish, { once: true });
+        return;
+      }
+
+      const script = documentRef.createElement("script");
+      script.src = TALLY_WIDGET_SRC;
+      script.async = true;
+      script.onload = finish;
+      script.onerror = finish;
+      documentRef.body.appendChild(script);
+    });
+  }
+
+  webWindow.Tally?.openPopup(TALLY_POPUP_FORM_ID, {
+    emoji: {
+      text: "👋",
+      animation: "wave",
+    },
+  });
 }
 
 function formatDate(value: string) {
@@ -1584,5 +1674,3 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 });
-
-
