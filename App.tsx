@@ -377,9 +377,9 @@ function LandingScreen(props: { hasInProgressSession: boolean; onStartQuiz: () =
           <Text style={styles.heroTagText}>For Newer Couples</Text>
         </View>
 
-        <Text style={styles.landingDisplayTitle}>Do you actually know your partner as well as you think?</Text>
+        <Text style={styles.landingDisplayTitle}>Is your girl pissed at you? </Text>
         <Text style={styles.heroBody}>
-          Love Better is a short, private self-check for newer or early-stage couples who want to catch blind spots early. It is not therapy, not a compatibility test, and not a relationship score.
+          Fix it by finally understanding what she actually wants.
         </Text>
 
         <View style={styles.rowActions}>
@@ -395,7 +395,7 @@ function LandingScreen(props: { hasInProgressSession: boolean; onStartQuiz: () =
       </View>
 
       <View style={styles.landingSectionCard}>
-        <Text style={styles.eyebrow}>What You Get</Text>
+        <Text style={styles.eyebrow}>What you'll get</Text>
         <Text style={styles.sectionTitle}>Spot the blind spots before they turn into weird little disconnects.</Text>
         <View style={styles.flowGrid}>
           <FlowStepCard
