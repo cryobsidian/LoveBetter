@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
+import Svg, { Circle } from "react-native-svg";
 
 import {
   getPackDescription,
@@ -56,7 +57,10 @@ import type {
   SessionSnapshot,
 } from "./src/types";
 
-type Screen = "home" | "intro" | "question" | "summary" | "dashboard";
+type Screen = "landing" | "home" | "intro" | "question" | "summary" | "dashboard";
+
+const TALLY_POPUP_FORM_ID = "Np4yzO";
+const TALLY_WIDGET_SRC = "https://tally.so/widgets/embed.js";
 
 const answerOptions: { value: AnswerValue; label: string }[] = [
   { value: "yes", label: "Yes" },
@@ -96,7 +100,7 @@ const webHoverGlowPrimary =
     : {};
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>("home");
+  const [screen, setScreen] = useState<Screen>("landing");
   const [session, setSession] = useState<SessionSnapshot | null>(null);
   const [latestAnswerHistory, setLatestAnswerHistory] = useState<LatestAnswerHistory>({});
   const [historicalNoHistory, setHistoricalNoHistory] = useState<HistoricalNoHistory>({});
@@ -104,6 +108,7 @@ export default function App() {
   const [isHydrating, setIsHydrating] = useState(true);
   const [isConfirmingClearData, setIsConfirmingClearData] = useState(false);
   const [selectedNoCardId, setSelectedNoCardId] = useState<string | null>(null);
+  const [shouldOpenTallyPopup, setShouldOpenTallyPopup] = useState(false);
 
   useEffect(() => {
     void hydrateAppState();
@@ -156,8 +161,23 @@ export default function App() {
 
     setSession(storedSession);
     setSelectedPackId(storedSession.packId);
-    setScreen(storedSession.sessionState === "COMPLETED" ? "summary" : "question");
     setIsHydrating(false);
+  }
+
+  async function startStandardQuizFromLanding() {
+    setIsConfirmingClearData(false);
+    setSelectedNoCardId(null);
+
+    if (session?.sessionState === "IN_PROGRESS") {
+      setScreen("question");
+      return;
+    }
+
+    const nextSession = createSession("standard");
+    setSelectedPackId("standard");
+    setSession(nextSession);
+    setScreen("question");
+    await saveStoredSession(nextSession);
   }
 
   function beginPackIntro(packId: PackId) {
@@ -208,6 +228,7 @@ export default function App() {
 
       setLatestAnswerHistory(nextHistory);
       setHistoricalNoHistory(nextHistoricalNoHistory);
+      setShouldOpenTallyPopup(true);
       setScreen("summary");
       await Promise.all([
         saveStoredSession(nextSession),
@@ -226,6 +247,7 @@ export default function App() {
     setSession(null);
     setSelectedNoCardId(null);
     setSelectedPackId(nextPackId);
+    setShouldOpenTallyPopup(false);
     setScreen("intro");
     await clearStoredSession();
   }
@@ -235,6 +257,7 @@ export default function App() {
     setSelectedPackId(null);
     setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
+    setShouldOpenTallyPopup(false);
     setScreen("home");
     await clearStoredSession();
   }
@@ -258,6 +281,7 @@ export default function App() {
     setHistoricalNoHistory({});
     setSelectedNoCardId(null);
     setIsConfirmingClearData(false);
+    setShouldOpenTallyPopup(false);
     setScreen("home");
     await clearAllAppStorage();
   }
@@ -282,6 +306,13 @@ export default function App() {
       <SafeAreaView style={styles.safeArea}>
         <DecorativeBackdrop />
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+          {screen === "landing" ? (
+            <LandingScreen
+              hasInProgressSession={session?.sessionState === "IN_PROGRESS"}
+              onStartQuiz={() => void startStandardQuizFromLanding()}
+            />
+          ) : null}
+
           {screen === "home" ? (
             <HomeScreen
               hasInProgressSession={session?.sessionState === "IN_PROGRESS"}
@@ -320,6 +351,8 @@ export default function App() {
               answerSummary={answerSummary}
               completedAt={session.completedAt}
               exploreItems={exploreItems}
+              shouldOpenTallyPopup={shouldOpenTallyPopup}
+              onTallyPopupHandled={() => setShouldOpenTallyPopup(false)}
               onReplay={handleReplay}
               onStartFresh={handleResetToHome}
               packLabel={getPackLabel(session.packId)}
@@ -345,6 +378,76 @@ export default function App() {
     </LinearGradient>
   );
 }
+
+function LandingScreen(props: { hasInProgressSession: boolean; onStartQuiz: () => void }) {
+  return (
+    <View style={styles.screen}>
+      <View style={styles.landingHero}>
+        <View style={styles.heroTag}>
+          <Text style={styles.heroTagText}>For Newer Couples</Text>
+        </View>
+
+        <Text style={styles.landingDisplayTitle}>Is your girl pissed at you? </Text>
+        <Text style={styles.heroBody}>
+          Fix it by finally understanding what she actually wants.
+        </Text>
+
+        <View style={styles.rowActions}>
+          <Pressable style={styles.primaryButton} onPress={props.onStartQuiz}>
+            <Text style={styles.primaryButtonText}>
+              {props.hasInProgressSession ? "Resume your quiz" : "Start the quiz now"}
+            </Text>
+          </Pressable>
+        </View>
+        <Text style={styles.supportText}>
+          No sign-up pressure. No public sharing. Just a quick reflection you can act on right away.
+        </Text>
+      </View>
+
+      <View style={styles.landingSectionCard}>
+        <Text style={styles.eyebrow}>What you'll get</Text>
+        <Text style={styles.sectionTitle}>Spot the blind spots before they turn into weird little disconnects.</Text>
+        <View style={styles.flowGrid}>
+          <FlowStepCard
+            step="01"
+            title="Notice the gaps"
+            body="Catch the everyday things you assume you know, but have never really checked."
+          />
+          <FlowStepCard
+            step="02"
+            title="Ask better questions"
+            body="Leave with clearer openings for better conversations instead of vague guessing."
+          />
+          <FlowStepCard
+            step="03"
+            title="Keep it light"
+            body="Move through the quiz without shame, pressure, or a pass-fail label hanging over you."
+          />
+        </View>
+      </View>
+
+      <View style={styles.landingSectionCard}>
+        <Text style={styles.eyebrow}>Quick Questions</Text>
+        <Text style={styles.sectionTitle}>The doubts people usually have before they start.</Text>
+        <View style={styles.faqStack}>
+          <FaqCard
+            question="Is this going to get too serious?"
+            answer="No. The quiz is short, conversational, and meant to spark curiosity, not drag you into an intense relationship intervention."
+          />
+          <FaqCard
+            question="Will this judge our relationship?"
+            answer="No. There is no compatibility score and no pass-fail result. You just get a clearer view of what feels known and what still needs attention."
+          />
+          <FaqCard
+            question="What happens after I start?"
+            answer="You answer a short set of prompts, get a reflection-focused summary, and leave with a few better questions to ask or notice over time."
+          />
+        </View>
+      </View>
+    </View>
+  );
+}
+
 function HomeScreen(props: {
   hasInProgressSession: boolean;
   activePackLabel?: string;
@@ -357,19 +460,10 @@ function HomeScreen(props: {
   return (
     <View style={styles.screen}>
       <View style={styles.heroTag}>
-        <Text style={styles.heroTagText}>Love Better v1.01</Text>
+        <Text style={styles.heroTagText}>Inside Love Better</Text>
       </View>
 
-      <Text style={styles.displayTitle}>Choose a self-check mode and start exploring what you know.</Text>
-      <Text style={styles.heroBody}>
-        Play a mixed round or focus on one pack at a time. Everything stays local to this device, and your latest completed answers appear in the dashboard.
-      </Text>
-
-      <View style={styles.heroStats}>
-        <MetricCard value={`${QUESTIONS_PER_SESSION}`} label="prompts" />
-        <MetricCard value="10" label="category packs" />
-        <MetricCard value="local" label="storage" />
-      </View>
+      <Text style={styles.displayTitle}>Choose your next self-check and move at your own pace.</Text>
 
       <View style={styles.rowActions}>
         {props.hasInProgressSession ? (
@@ -407,9 +501,28 @@ function HomeScreen(props: {
 
       <Text style={styles.supportText}>
         {props.lastCompletedAt
-          ? `Last completed session saved ${formatDate(props.lastCompletedAt)}.`
+          ? `Last completed session saved ${formatDate(props.lastCompletedAt)}. Pick a new mode whenever you want another snapshot.`
           : "Pick any mode to begin a new self-check."}
       </Text>
+    </View>
+  );
+}
+
+function FlowStepCard(props: { step: string; title: string; body: string }) {
+  return (
+    <View style={styles.flowCard}>
+      <Text style={styles.flowStep}>{props.step}</Text>
+      <Text style={styles.flowTitle}>{props.title}</Text>
+      <Text style={styles.flowBody}>{props.body}</Text>
+    </View>
+  );
+}
+
+function FaqCard(props: { question: string; answer: string }) {
+  return (
+    <View style={styles.faqCard}>
+      <Text style={styles.faqQuestion}>{props.question}</Text>
+      <Text style={styles.faqAnswer}>{props.answer}</Text>
     </View>
   );
 }
@@ -543,10 +656,30 @@ function SummaryScreen(props: {
   answerSummary: { yes: number; no: number };
   completedAt?: string;
   exploreItems: ReturnType<typeof getExploreItems>;
+  shouldOpenTallyPopup: boolean;
+  onTallyPopupHandled: () => void;
   onReplay: () => void;
   onStartFresh: () => void;
   packLabel: string;
 }) {
+  useEffect(() => {
+    if (!props.shouldOpenTallyPopup) {
+      return;
+    }
+
+    let isCancelled = false;
+
+    void openTallyPopup().finally(() => {
+      if (!isCancelled) {
+        props.onTallyPopupHandled();
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [props.onTallyPopupHandled, props.shouldOpenTallyPopup]);
+
   return (
     <View style={styles.screen}>
       <Text style={styles.eyebrow}>Session complete</Text>
@@ -630,23 +763,15 @@ function DashboardScreen(props: {
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Knowledge tracker</Text>
-        {props.trackerRows.map((item) => (
-          <View key={item.category} style={styles.trackerRow}>
-            <View style={styles.trackerHeader}>
-              <Text style={styles.trackerCategory}>{item.category}</Text>
-              <Text style={styles.trackerPercentage}>{item.percentage}%</Text>
-            </View>
-            <View style={styles.trackerTrack}>
-              <View
-                style={[
-                  styles.trackerFill,
-                  { width: `${item.percentage}%` },
-                ]}
-              />
-            </View>
-            <Text style={styles.trackerMeta}>{`${item.yesCount} / ${item.totalCount} known`}</Text>
-          </View>
-        ))}
+        <View style={styles.trackerGrid}>
+          {props.trackerRows.map((item) => (
+            <KnowledgeDial
+              key={item.category}
+              category={item.category}
+              percentage={item.percentage}
+            />
+          ))}
+        </View>
       </View>
 
       <View style={styles.card}>
@@ -735,11 +860,46 @@ function DecorativeBackdrop() {
   );
 }
 
-function MetricCard(props: { value: string; label: string }) {
+function KnowledgeDial(props: { category: string; percentage: number }) {
+  const size = 112;
+  const strokeWidth = 10;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const clampedPercentage = Math.max(0, Math.min(100, props.percentage));
+  const dashOffset = circumference * (1 - clampedPercentage / 100);
+
   return (
-    <View style={styles.metricCard}>
-      <Text style={styles.metricValue}>{props.value}</Text>
-      <Text style={styles.metricLabel}>{props.label}</Text>
+    <View style={styles.trackerDialCard}>
+      <View style={styles.trackerDialShell}>
+        <Svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          <Circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke="rgba(49, 35, 31, 0.08)"
+            strokeWidth={strokeWidth}
+          />
+          <Circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke={theme.coral}
+            strokeWidth={strokeWidth}
+            strokeLinecap="round"
+            strokeDasharray={`${circumference} ${circumference}`}
+            strokeDashoffset={dashOffset}
+            originX={size / 2}
+            originY={size / 2}
+            rotation={-90}
+          />
+        </Svg>
+        <View pointerEvents="none" style={styles.trackerDialCenter}>
+          <Text style={styles.trackerDialPercentage}>{clampedPercentage}%</Text>
+        </View>
+      </View>
+      <Text style={styles.trackerDialCategory}>{props.category}</Text>
     </View>
   );
 }
@@ -758,6 +918,66 @@ function SummaryCard(props: { title: string; value: number; tone: "warm" | "soft
       <Text style={styles.summaryLabel}>{props.title}</Text>
     </View>
   );
+}
+
+async function openTallyPopup() {
+  if (Platform.OS !== "web") {
+    return;
+  }
+
+  const webWindow = globalThis as typeof globalThis & {
+    document?: Document;
+    Tally?: {
+      openPopup: (
+        formId: string,
+        options?: {
+          emoji?: {
+            text: string;
+            animation: "none" | "wave" | "tada" | "heart-beat" | "spin" | "flash" | "bounce" | "rubber-band" | "head-shake";
+          };
+        },
+      ) => void;
+    };
+  };
+
+  const documentRef = webWindow.document;
+
+  if (!documentRef) {
+    return;
+  }
+
+  if (!webWindow.Tally?.openPopup) {
+    await new Promise<void>((resolve) => {
+      const existingScript = documentRef.querySelector(`script[src="${TALLY_WIDGET_SRC}"]`) as HTMLScriptElement | null;
+
+      const finish = () => resolve();
+
+      if (existingScript) {
+        if (webWindow.Tally?.openPopup) {
+          resolve();
+          return;
+        }
+
+        existingScript.addEventListener("load", finish, { once: true });
+        existingScript.addEventListener("error", finish, { once: true });
+        return;
+      }
+
+      const script = documentRef.createElement("script");
+      script.src = TALLY_WIDGET_SRC;
+      script.async = true;
+      script.onload = finish;
+      script.onerror = finish;
+      documentRef.body.appendChild(script);
+    });
+  }
+
+  webWindow.Tally?.openPopup(TALLY_POPUP_FORM_ID, {
+    emoji: {
+      text: "👋",
+      animation: "wave",
+    },
+  });
 }
 
 function formatDate(value: string) {
@@ -862,37 +1082,141 @@ const styles = StyleSheet.create({
     letterSpacing: -1.2,
     maxWidth: 720,
   },
+  landingHero: {
+    gap: 22,
+    padding: 28,
+    borderRadius: 40,
+    backgroundColor: "rgba(255, 250, 243, 0.58)",
+    borderWidth: 1,
+    borderColor: "rgba(49, 35, 31, 0.08)",
+    ...webShadow,
+  },
+  landingDisplayTitle: {
+    color: theme.ink,
+    fontSize: 56,
+    lineHeight: 62,
+    fontWeight: "900",
+    letterSpacing: -1.8,
+    maxWidth: 760,
+  },
   heroBody: {
     color: theme.mutedInk,
     fontSize: 18,
     lineHeight: 28,
     maxWidth: 700,
   },
-  heroStats: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 12,
-  },
-  metricCard: {
-    minWidth: 116,
-    borderRadius: 28,
-    backgroundColor: "rgba(255, 250, 243, 0.88)",
+  landingSectionCard: {
+    backgroundColor: "rgba(255, 250, 243, 0.78)",
+    borderRadius: 34,
     borderWidth: 1,
     borderColor: theme.line,
-    paddingHorizontal: 18,
-    paddingVertical: 18,
+    padding: 24,
+    gap: 18,
     ...webShadow,
   },
-  metricValue: {
+  flowGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  flowCard: {
+    flexBasis: 220,
+    flexGrow: 1,
+    minHeight: 182,
+    borderRadius: 28,
+    backgroundColor: "rgba(255, 253, 249, 0.92)",
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 20,
+    gap: 10,
+  },
+  flowStep: {
+    color: theme.coral,
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 1.2,
+  },
+  flowTitle: {
     color: theme.ink,
-    fontSize: 30,
+    fontSize: 24,
+    lineHeight: 30,
     fontWeight: "900",
   },
-  metricLabel: {
+  flowBody: {
     color: theme.mutedInk,
-    fontSize: 13,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  faqStack: {
+    gap: 14,
+  },
+  faqCard: {
+    borderRadius: 28,
+    borderWidth: 1,
+    borderColor: theme.line,
+    backgroundColor: "rgba(255, 253, 249, 0.94)",
+    padding: 20,
+    gap: 10,
+  },
+  faqQuestion: {
+    color: theme.ink,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  faqAnswer: {
+    color: theme.mutedInk,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  previewGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  previewPackCard: {
+    flexBasis: 210,
+    flexGrow: 1,
+    minHeight: 156,
+    borderRadius: 28,
+    borderWidth: 1,
+    borderColor: theme.line,
+    backgroundColor: "rgba(255, 253, 249, 0.94)",
+    padding: 20,
+    gap: 10,
+  },
+  previewPackCardPrimary: {
+    backgroundColor: "#342724",
+    borderColor: "#342724",
+  },
+  previewPackKicker: {
+    color: "#f6d8cc",
+    fontSize: 11,
+    fontWeight: "800",
     textTransform: "uppercase",
-    letterSpacing: 1,
+    letterSpacing: 1.2,
+  },
+  previewPackTitle: {
+    color: theme.ink,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  previewPackTitlePrimary: {
+    color: "#fff7f1",
+    fontSize: 26,
+    lineHeight: 32,
+    fontWeight: "900",
+  },
+  previewPackBody: {
+    color: theme.mutedInk,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  previewPackBodyPrimary: {
+    color: "#f6d8cc",
+    fontSize: 15,
+    lineHeight: 24,
   },
   primaryButton: {
     alignSelf: "flex-start",
@@ -1236,48 +1560,51 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 24,
   },
-  trackerRow: {
-    borderTopWidth: 1,
-    borderTopColor: theme.line,
-    paddingTop: 16,
-    gap: 10,
-  },
-  trackerHeader: {
+  trackerGrid: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: 16,
+    justifyContent: "center",
+  },
+  trackerDialCard: {
+    flexBasis: 150,
+    flexGrow: 1,
+    maxWidth: 170,
+    minWidth: 136,
     alignItems: "center",
     gap: 12,
-  },
-  trackerCategory: {
-    color: theme.ink,
-    fontSize: 16,
-    lineHeight: 22,
-    fontWeight: "800",
-    flexShrink: 1,
-  },
-  trackerPercentage: {
-    color: theme.coral,
-    fontSize: 18,
-    fontWeight: "900",
-  },
-  trackerTrack: {
-    height: 14,
-    borderRadius: 999,
-    backgroundColor: "rgba(255, 245, 236, 0.92)",
-    overflow: "hidden",
+    paddingHorizontal: 10,
+    paddingVertical: 14,
+    borderRadius: 26,
+    backgroundColor: "rgba(255, 253, 249, 0.92)",
     borderWidth: 1,
     borderColor: theme.line,
   },
-  trackerFill: {
-    height: "100%",
-    minWidth: 0,
-    borderRadius: 999,
-    backgroundColor: theme.coral,
+  trackerDialShell: {
+    width: 112,
+    height: 112,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  trackerMeta: {
-    color: theme.mintDeep,
-    fontSize: 13,
-    fontWeight: "700",
+  trackerDialCenter: {
+    position: "absolute",
+    inset: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  trackerDialPercentage: {
+    color: theme.ink,
+    fontSize: 24,
+    fontWeight: "900",
+    letterSpacing: -0.5,
+  },
+  trackerDialCategory: {
+    color: theme.ink,
+    fontSize: 15,
+    lineHeight: 21,
+    fontWeight: "800",
+    textAlign: "center",
+    minHeight: 42,
   },
   noCardGrid: {
     flexDirection: "row",
@@ -1347,4 +1674,3 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 });
-

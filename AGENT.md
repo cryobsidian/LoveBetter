@@ -12,10 +12,12 @@ Use this file to give repository-specific instructions to the coding agent.
 - Refer to the file "PRD 1 for love better.md" for context regarding the project
 
 ## Commands
-
-- Put the main setup command here.
-- Put the main test command here.
-- Put the main run command here.
+- When asked to explain whole code files: 
+    - Explain the purpose (what it accomplishes) , walking through it step by step in execution order showing how data moves through the code. 
+    - Include explanations of dependencies and references to other parts of the greater code base so that I know how the selected file fits into the whole flow of the program.
+- When asked to explain specific highlighted code snippets : 
+    - Explain the workings of the selected code 
+    - Explain how it ties in to the overall code base
 
 ## Definition Of Done
 
