@@ -160,10 +160,20 @@ export default function App() {
     setIsHydrating(false);
   }
 
-  function enterApp() {
+  async function startStandardQuizFromLanding() {
     setIsConfirmingClearData(false);
     setSelectedNoCardId(null);
-    setScreen("home");
+
+    if (session?.sessionState === "IN_PROGRESS") {
+      setScreen("question");
+      return;
+    }
+
+    const nextSession = createSession("standard");
+    setSelectedPackId("standard");
+    setSession(nextSession);
+    setScreen("question");
+    await saveStoredSession(nextSession);
   }
 
   function beginPackIntro(packId: PackId) {
@@ -288,7 +298,12 @@ export default function App() {
       <SafeAreaView style={styles.safeArea}>
         <DecorativeBackdrop />
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-          {screen === "landing" ? <LandingScreen onEnterApp={enterApp} /> : null}
+          {screen === "landing" ? (
+            <LandingScreen
+              hasInProgressSession={session?.sessionState === "IN_PROGRESS"}
+              onStartQuiz={() => void startStandardQuizFromLanding()}
+            />
+          ) : null}
 
           {screen === "home" ? (
             <HomeScreen
@@ -354,87 +369,70 @@ export default function App() {
   );
 }
 
-function LandingScreen(props: { onEnterApp: () => void }) {
-  const previewPacks = questionPacks.filter((pack) => pack.id !== "standard").slice(0, 4);
-
+function LandingScreen(props: { hasInProgressSession: boolean; onStartQuiz: () => void }) {
   return (
     <View style={styles.screen}>
       <View style={styles.landingHero}>
         <View style={styles.heroTag}>
-          <Text style={styles.heroTagText}>Love Better</Text>
+          <Text style={styles.heroTagText}>For Newer Couples</Text>
         </View>
 
-        <Text style={styles.landingDisplayTitle}>Enter a calmer way to notice how well you know your partner.</Text>
+        <Text style={styles.landingDisplayTitle}>Do you actually know your partner as well as you think?</Text>
         <Text style={styles.heroBody}>
-          A short reflective self-check for relationships. No grading, no pressure, just a gentler way to surface what already feels clear and what deserves more curiosity.
+          Love Better is a short, private self-check for newer or early-stage couples who want to catch blind spots early. It is not therapy, not a compatibility test, and not a relationship score.
         </Text>
 
         <View style={styles.rowActions}>
-          <Pressable style={styles.primaryButton} onPress={props.onEnterApp}>
-            <Text style={styles.primaryButtonText}>Enter the self-check</Text>
+          <Pressable style={styles.primaryButton} onPress={props.onStartQuiz}>
+            <Text style={styles.primaryButtonText}>
+              {props.hasInProgressSession ? "Resume your quiz" : "Start the quiz now"}
+            </Text>
           </Pressable>
         </View>
-      </View>
-
-      <View style={styles.landingValueStrip}>
-        <MetricCard value={`${QUESTIONS_PER_SESSION}`} label="prompts" />
-        <MetricCard value="No" label="grading" />
-        <MetricCard value="Private" label="storage" />
+        <Text style={styles.supportText}>
+          No sign-up pressure. No public sharing. Just a quick reflection you can act on right away.
+        </Text>
       </View>
 
       <View style={styles.landingSectionCard}>
-        <Text style={styles.eyebrow}>How it flows</Text>
-        <Text style={styles.sectionTitle}>A reflective rhythm built to feel light, not performative.</Text>
+        <Text style={styles.eyebrow}>What You Get</Text>
+        <Text style={styles.sectionTitle}>Spot the blind spots before they turn into weird little disconnects.</Text>
         <View style={styles.flowGrid}>
           <FlowStepCard
             step="01"
-            title="Enter"
-            body="Start from a calm entry point and choose the kind of self-check you want to move through."
+            title="Notice the gaps"
+            body="Catch the everyday things you assume you know, but have never really checked."
           />
           <FlowStepCard
             step="02"
-            title="Reflect"
-            body="Move through a short set of prompts that reveal what feels known, assumed, or still fuzzy."
+            title="Ask better questions"
+            body="Leave with clearer openings for better conversations instead of vague guessing."
           />
           <FlowStepCard
             step="03"
-            title="Explore"
-            body="Leave with a few openings for softer conversations, closer observation, or more intentional time."
+            title="Keep it light"
+            body="Move through the quiz without shame, pressure, or a pass-fail label hanging over you."
           />
         </View>
       </View>
 
       <View style={styles.landingSectionCard}>
-        <Text style={styles.eyebrow}>Pack preview</Text>
-        <Text style={styles.sectionTitle}>Mix the full question bank or drift into one dimension at a time.</Text>
-        <Text style={styles.sectionBody}>
-          The app home lets you choose a broad self-check or focus on a specific area like habits, travel, lifestyle, or relationship awareness.
-        </Text>
-
-        <View style={styles.previewGrid}>
-          <View style={[styles.previewPackCard, styles.previewPackCardPrimary]}>
-            <Text style={styles.previewPackKicker}>Recommended start</Text>
-            <Text style={styles.previewPackTitlePrimary}>Standard</Text>
-            <Text style={styles.previewPackBodyPrimary}>
-              A mixed self-check across the full question bank for a wider, softer snapshot.
-            </Text>
-          </View>
-
-          {previewPacks.map((pack) => (
-            <PackPreviewCard key={pack.id} title={pack.label} description={pack.description} />
-          ))}
+        <Text style={styles.eyebrow}>Quick Questions</Text>
+        <Text style={styles.sectionTitle}>The doubts people usually have before they start.</Text>
+        <View style={styles.faqStack}>
+          <FaqCard
+            question="Is this going to get too serious?"
+            answer="No. The quiz is short, conversational, and meant to spark curiosity, not drag you into an intense relationship intervention."
+          />
+          <FaqCard
+            question="Will this judge our relationship?"
+            answer="No. There is no compatibility score and no pass-fail result. You just get a clearer view of what feels known and what still needs attention."
+          />
+          <FaqCard
+            question="What happens after I start?"
+            answer="You answer a short set of prompts, get a reflection-focused summary, and leave with a few better questions to ask or notice over time."
+          />
         </View>
-      </View>
-
-      <View style={styles.landingClosingCard}>
-        <Text style={styles.eyebrow}>Ready when you are</Text>
-        <Text style={styles.sectionTitle}>Step into the app, choose a mode, and start noticing what opens up.</Text>
-        <Text style={styles.sectionBody}>
-          Your saved progress and dashboard stay inside the app flow. This page is just the threshold.
-        </Text>
-        <Pressable style={styles.primaryButton} onPress={props.onEnterApp}>
-          <Text style={styles.primaryButtonText}>Choose your self-check</Text>
-        </Pressable>
       </View>
     </View>
   );
@@ -510,11 +508,11 @@ function FlowStepCard(props: { step: string; title: string; body: string }) {
   );
 }
 
-function PackPreviewCard(props: { title: string; description: string }) {
+function FaqCard(props: { question: string; answer: string }) {
   return (
-    <View style={styles.previewPackCard}>
-      <Text style={styles.previewPackTitle}>{props.title}</Text>
-      <Text style={styles.previewPackBody}>{props.description}</Text>
+    <View style={styles.faqCard}>
+      <Text style={styles.faqQuestion}>{props.question}</Text>
+      <Text style={styles.faqAnswer}>{props.answer}</Text>
     </View>
   );
 }
@@ -832,15 +830,6 @@ function DecorativeBackdrop() {
   );
 }
 
-function MetricCard(props: { value: string; label: string }) {
-  return (
-    <View style={styles.metricCard}>
-      <Text style={styles.metricValue}>{props.value}</Text>
-      <Text style={styles.metricLabel}>{props.label}</Text>
-    </View>
-  );
-}
-
 function KnowledgeDial(props: { category: string; percentage: number }) {
   const size = 112;
   const strokeWidth = 10;
@@ -1026,11 +1015,6 @@ const styles = StyleSheet.create({
     lineHeight: 28,
     maxWidth: 700,
   },
-  landingValueStrip: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 12,
-  },
   landingSectionCard: {
     backgroundColor: "rgba(255, 250, 243, 0.78)",
     borderRadius: 34,
@@ -1069,6 +1053,28 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
   flowBody: {
+    color: theme.mutedInk,
+    fontSize: 15,
+    lineHeight: 24,
+  },
+  faqStack: {
+    gap: 14,
+  },
+  faqCard: {
+    borderRadius: 28,
+    borderWidth: 1,
+    borderColor: theme.line,
+    backgroundColor: "rgba(255, 253, 249, 0.94)",
+    padding: 20,
+    gap: 10,
+  },
+  faqQuestion: {
+    color: theme.ink,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  faqAnswer: {
     color: theme.mutedInk,
     fontSize: 15,
     lineHeight: 24,
@@ -1121,41 +1127,6 @@ const styles = StyleSheet.create({
     color: "#f6d8cc",
     fontSize: 15,
     lineHeight: 24,
-  },
-  landingClosingCard: {
-    backgroundColor: "rgba(255, 250, 243, 0.82)",
-    borderRadius: 38,
-    borderWidth: 1,
-    borderColor: theme.line,
-    padding: 28,
-    gap: 18,
-    ...webShadow,
-  },
-  heroStats: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 12,
-  },
-  metricCard: {
-    minWidth: 116,
-    borderRadius: 28,
-    backgroundColor: "rgba(255, 250, 243, 0.88)",
-    borderWidth: 1,
-    borderColor: theme.line,
-    paddingHorizontal: 18,
-    paddingVertical: 18,
-    ...webShadow,
-  },
-  metricValue: {
-    color: theme.ink,
-    fontSize: 30,
-    fontWeight: "900",
-  },
-  metricLabel: {
-    color: theme.mutedInk,
-    fontSize: 13,
-    textTransform: "uppercase",
-    letterSpacing: 1,
   },
   primaryButton: {
     alignSelf: "flex-start",
